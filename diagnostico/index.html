@@ -627,9 +627,14 @@ class Component extends DCLogic {
 
   async submitLead(a, result){
     try{
+      const SUPABASE_KEY = 'sb_publishable_mMfOhG7_atrsY2jyZJbtjQ_LoO5TLBO';
       const res = await fetch('https://mfapudrzukmfjcsmhpmn.supabase.co/functions/v1/submit-lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
         body: JSON.stringify(this.buildPayload(a, result)),
       });
       if(!res.ok){ console.error('submit-lead error:', await res.text()); }
