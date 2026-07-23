@@ -102,10 +102,72 @@
           <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-family: var(--font-body); font-size: 15px; text-align: center; padding: 24px;">{{ cinemaPlaceholder }}<br>Vídeo em breve</div>
         </sc-if>
       </div>
-      <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
-        <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">{{ cinemaClient }}</div>
-        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">{{ cinemaTitle }}</div>
-      </div>
+      <sc-if value="{{ cinemaIs0 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">NATURA</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Natal Natura</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs1 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">AMBEV</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Zé Delivery - Amigo Zécreto</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs2 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">AMBEV</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Brahma - Especialista Brahmosidade</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs3 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">DR. VITTÓRIO</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Conteúdo Social</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs4 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">DR. VITTÓRIO</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Conteúdo Social</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs5 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">DR. VITTÓRIO</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Conteúdo Social</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs6 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">JOHN DEERE</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Nova Onda tech</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs7 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">DR. VITTÓRIO</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Conteúdo Social</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs9 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">NATURA</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Natura - Revista Elle</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs10 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">CERCLE</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Vídeo Usual</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cinemaIs11 }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">NATURA</div>
+          <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">Natura - Revista Elle</div>
+        </div>
+      </sc-if>
     </div>
   </sc-if>
 
@@ -126,7 +188,7 @@
     <canvas id="hero-network" style="position: absolute; inset: 0; pointer-events: none;"></canvas>
     <div class="sg-container" style="margin-top: 0; max-width: 920px; position: relative;">
       <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--yellow-green-500); margin-bottom: 28px;">Agência de marketing estratégico</div>
-      <h1 id="hero-heading" style="font-family: var(--font-display); font-weight: 500; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.05; letter-spacing: var(--ls-tight); color: var(--cream-100); margin: 0 0 40px;">Estratégia, performance e conteúdo <em style="font-style: italic; color: var(--yellow-green-500);">integrados</em> em uma só operação.</h1>
+      <h1 id="hero-heading" style="font-family: var(--font-display); font-weight: 500; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.05; letter-spacing: var(--ls-tight); color: var(--cream-100); margin: 0 0 40px;">Estratégia, performance e criação&nbsp;<em style="font-style: italic; color: var(--yellow-green-500);">integrados</em> em uma só operação.</h1>
       <p style="font-size: 18px; line-height: 1.6; color: var(--text-muted-dark); max-width: 520px; margin: 0 0 48px;">Conectamos estratégia, geração de demanda e conteúdo para construir operações de marketing que geram resultados.</p>
       <a href="#contato" class="sg-cta-btn sg-cta-hero"><span class="sg-cta-pill" style="background: var(--cream-100); color: var(--ink-900);">Agende uma reunião estratégica</span><span class="sg-cta-circle" style="background: var(--yellow-green-500);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
     </div>
@@ -411,7 +473,7 @@
             <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
             <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
             <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
-              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">CIRCLE</div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">CERCLE</div>
               <div style="font-size: 12px; text-transform: none; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px">Vídeo Usual</div>
             </div>
           </div>
@@ -441,9 +503,9 @@
       <div>
         <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 24px;">A Agência Seed Grow</div>
         <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 56px; line-height: 1.15; color: var(--ink-900); margin: 0 0 32px">Sobre <em style="font-style: italic; color: var(--accent-primary)">nós</em></h2>
-        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;">Somos uma <em style="font-style: italic;">agência de marketing</em> especializada em operações de marketing que integram estratégia, geração de demanda e conteúdo para acelerar o crescimento dos negócios.</p>
-        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;">Há mais de 7 anos, ajudamos empresas de diferentes segmentos a transformar objetivos em <span style="color: var(--ink-900)"><b>resultados sustentáveis</b></span>.</p>
-        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 40px;">Acreditamos que toda operação de marketing eficiente começa da mesma forma: entendendo o negócio, definindo uma <span style="text-decoration: underline; text-decoration-color: var(--yellow-green-500); text-decoration-thickness: 3px; text-underline-offset: 4px; color: var(--ink-900)"><b>estratégia clara</b></span> e executando cada etapa com propósito.</p>
+        <div style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;"><p class="selectable-text copyable-text x15bjb6t x1n2onr6"><span class="selectable-text copyable-text xkrh14z" style="white-space: pre-wrap;">Somos uma <i>agência de marketing</i> que constrói operações capazes de transformar estratégia em crescimento.</span></p></div>
+        <div style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;"><p class="selectable-text copyable-text x15bjb6t x1n2onr6"><span class="selectable-text copyable-text xkrh14z" style="white-space: pre-wrap;">Unimos <b>planejamento</b>, <b>performance</b> e <b>produção criativa</b> <i>in house</i>, para criar iniciativas que <span style="text-decoration: underline; text-decoration-color: var(--yellow-green-500); text-underline-offset: 4px;">fortalecem marcas, geram oportunidades e impulsionam resultados de negócio</span>.</span></p></div>
+        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 40px;"><span class="selectable-text copyable-text xkrh14z" style="white-space: pre-wrap;">Há mais de 7 anos, ajudamos empresas de diferentes segmentos a <b>crescer de forma sustentável</b>. Nosso trabalho começa entendendo o negócio, evolui com uma estratégia bem definida e ganha força por meio de uma execução consistente.</span></p>
         <a href="#contato" class="sg-cta-btn"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900);">Quero falar com o time</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
       </div>
     </div>
@@ -557,7 +619,7 @@ class Component extends DCLogic {
     setTimeout(() => this.setState({ cinemaIndex: null }), 450);
   };
   stopPropagation = (e) => e.stopPropagation();
-  vimeoEmbedUrl = (id) => `https://player.vimeo.com/video/${id}?badge=0&autopause=0&player_id=0&app_id=58479&byline=0&portrait=0&title=0&dnt=1&autoplay=1`;
+  vimeoEmbedUrl = (id) => `https://player.vimeo.com/video/${id}?badge=0&autopause=0&player_id=0&app_id=58479&byline=0&portrait=0&title=0&dnt=1&autoplay=1&loop=1`;
   vimeoBgEmbedUrl = (id) => `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&byline=0&portrait=0&title=0&badge=0&app_id=58479&dnt=1`;
   hoverIn = (e) => {
     const card = e.currentTarget.closest('.sg-portfolio-card');
@@ -859,6 +921,17 @@ class Component extends DCLogic {
       cinemaRatio: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].ratio : '16/9',
       cinemaPlaceholder: this.state.cinemaIndex !== null ? `Vídeo — ${this.portfolioItems[this.state.cinemaIndex].client}` : '',
       cinemaVimeoId: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].vimeoId : null,
+      cinemaIs0: this.state.cinemaIndex === 0,
+      cinemaIs1: this.state.cinemaIndex === 1,
+      cinemaIs2: this.state.cinemaIndex === 2,
+      cinemaIs3: this.state.cinemaIndex === 3,
+      cinemaIs4: this.state.cinemaIndex === 4,
+      cinemaIs5: this.state.cinemaIndex === 5,
+      cinemaIs6: this.state.cinemaIndex === 6,
+      cinemaIs7: this.state.cinemaIndex === 7,
+      cinemaIs9: this.state.cinemaIndex === 9,
+      cinemaIs10: this.state.cinemaIndex === 10,
+      cinemaIs11: this.state.cinemaIndex === 11,
       cinemaEmbedUrl: this.state.cinemaIndex !== null && this.portfolioItems[this.state.cinemaIndex].vimeoId ? this.vimeoEmbedUrl(this.portfolioItems[this.state.cinemaIndex].vimeoId) : '',
       cinemaHasVideo: this.state.cinemaIndex !== null && !!this.portfolioItems[this.state.cinemaIndex].vimeoId,
       cinemaNoVideo: this.state.cinemaIndex !== null && !this.portfolioItems[this.state.cinemaIndex].vimeoId,
