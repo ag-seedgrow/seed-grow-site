@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#03302f"></rect><text x="30" y="115" font-family="Georgia, serif" font-size="46" fill="#c3d82e" font-style="italic">SG</text></svg></template>
+<helmet>
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/styles.css">
+  <script src="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream-100); scroll-behavior: smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="4" fill="%23c3d82e"/></svg>') 14 14, auto; }
+    a, button { cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="6" fill="none" stroke="%23c3d82e" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="%23c3d82e"/></svg>') 14 14, pointer; }
+    p, h1, h2, h3, span, label, textarea, input { cursor: text; }
+    a, button, a *, button * { cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="6" fill="none" stroke="%23c3d82e" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="%23c3d82e"/></svg>') 14 14, pointer; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--yellow-green-500); color: var(--ink-900); }
+    .sg-container { max-width: 1280px; margin: 0 auto; padding: 0 96px; }
+    .sg-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .sg-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .sg-nav-links { display: flex; }
+    .sg-burger { display: none; }
+    .sg-stats { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .sg-clients { display: flex; flex-wrap: wrap; }
+    @keyframes sg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes sg-marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+        .sg-marquee-row { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+    .sg-marquee-track { display: flex; gap: clamp(80px, 8vw, 180px); width: max-content; align-items: center; will-change: transform; }
+    .sg-marquee-logo { height: clamp(28px, 3vw, 40px); width: clamp(64px, 6vw, 90px); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .sg-marquee-logo img { max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+    .sg-capacity-card { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 28px; min-height: 320px; cursor: pointer; transition: flex-grow 0.35s ease, background 0.3s ease, border-color 0.3s ease; }
+    .sg-capacity-card:hover { border-color: var(--yellow-green-500) !important; }
+    #portfolio-scroll::-webkit-scrollbar { display: none; }
+    #portfolio-mosaic::-webkit-scrollbar { display: none; }
+    .sg-cta-btn { position: relative; display: inline-flex; align-items: center; height: 56px; text-decoration: none; }
+    .sg-cta-pill { position: relative; z-index: 1; display: flex; align-items: center; height: 100%; padding: 0 30px; border-radius: 999px; white-space: nowrap; font-weight: 600; font-size: 15px; transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
+    .sg-cta-circle { position: absolute; top: 0; height: 56px; width: 56px; left: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: left 0.45s cubic-bezier(0.65,0,0.35,1); z-index: 2; }
+    .sg-cta-circle svg { transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
+    .sg-cta-btn:hover .sg-cta-pill { transform: translateX(56px); }
+    .sg-cta-btn:hover .sg-cta-circle { left: 0; }
+    .sg-cta-btn:hover .sg-cta-circle svg { transform: rotate(-45deg); }
+    .sg-cta-hero { height: 46px; }
+    .sg-cta-hero .sg-cta-pill { padding: 0 26px; font-size: 14px; }
+    .sg-cta-hero .sg-cta-circle { width: 46px; height: 46px; }
+    .sg-cta-hero:hover .sg-cta-pill { transform: translateX(46px); }
+    .sg-cta-hero:hover .sg-cta-circle { left: 0; }
+    @media (max-width: 640px) {
+      .sg-cta-btn { height: auto; }
+      .sg-cta-pill { padding: 16px 20px !important; transform: none !important; }
+      .sg-cta-circle { position: static !important; left: auto !important; width: 32px; height: 32px; margin-left: -8px; }
+      .sg-cta-circle svg { width: 14px; height: 14px; }
+      .sg-cta-btn:hover .sg-cta-pill { transform: none !important; }
+      .sg-cta-btn:hover .sg-cta-circle { left: auto !important; }
+      .sg-cta-btn:hover .sg-cta-circle svg { transform: none !important; }
+    }
+    .sg-portfolio-card { opacity: 1; }
+    @media (max-width: 980px) { .sg-capacity-row { flex-direction: column; } .sg-capacity-card { flex-grow: 1 !important; } }
+    @media (max-width: 640px) { #portfolio-mosaic { column-count: 1 !important; } }
+    @keyframes sg-float { 0%, 100% { transform: translate(0, 0); opacity: 0.5; } 50% { transform: translate(var(--drift), calc(var(--drift) * -1)); opacity: 1; } }
+    @media (max-width: 980px) {
+      .sg-container { padding: 0 32px; }
+      .sg-grid-3 { grid-template-columns: 1fr; }
+      .sg-grid-2 { grid-template-columns: 1fr; }
+      .sg-nav-links { display: none; }
+      .sg-burger { display: flex; }
+      .sg-stats { grid-template-columns: 1fr; }
+      .sg-abordagem-split { grid-template-columns: 1fr !important; gap: 48px !important; }
+      .sg-clients-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .sg-sobre-split { grid-template-columns: 1fr !important; }
+      .sg-contato-split { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--cream-100); color: var(--ink-900); overflow-x: hidden;">
+
+  <a href="#hero" id="site-logo-link" style="position: fixed; top: 32px; left: 96px; z-index: 70; display: flex; align-items: center;">
+    <img id="site-logo" src="assets/logo-light.png" alt="Seed Grow" style="height: 20px; width: auto; display: block;">
+  </a>
+  <button onClick="{{ toggleNav }}" style="position: fixed; top: 28px; right: 96px; z-index: 70; background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 6px;">
+    <span class="sg-burger-line" style="width: 24px; height: 2px; background: var(--cream-100); display: block; transition: background 0.3s ease;"></span>
+    <span class="sg-burger-line" style="width: 24px; height: 2px; background: var(--cream-100); display: block; transition: background 0.3s ease;"></span>
+  </button>
+
+  <sc-if value="{{ cinemaOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeCinema }}" style="{{ cinemaBackdropStyle }}">
+      <div style="{{ cinemaBeamStyle }}"></div>
+      <button onClick="{{ closeCinema }}" style="{{ cinemaCloseStyle }}">✕</button>
+      <div onClick="{{ stopPropagation }}" style="{{ cinemaPanelStyle }}">
+        <sc-if value="{{ cinemaHasVideo }}" hint-placeholder-val="{{ false }}">
+          <iframe src="{{ cinemaEmbedUrl }}" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" title="{{ cinemaTitle }}"></iframe>
+        </sc-if>
+        <sc-if value="{{ cinemaNoVideo }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-family: var(--font-body); font-size: 15px; text-align: center; padding: 24px;">{{ cinemaPlaceholder }}<br>Vídeo em breve</div>
+        </sc-if>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 12px; color: var(--cream-100);">
+        <div style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase;">{{ cinemaClient }}</div>
+        <div style="font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted-dark);">{{ cinemaTitle }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="{{ mobileNavStyle }}">
+    <button onClick="{{ toggleNav }}" style="position: absolute; top: 28px; right: 32px; background: none; border: none; color: var(--cream-100); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;">Fechar</button>
+    <a href="#capacidades" onClick="{{ toggleNav }}" style="font-family: var(--font-display); font-size: 32px; color: var(--cream-100);">Serviços</a>
+    <a href="#portfolio" onClick="{{ toggleNav }}" style="font-family: var(--font-display); font-size: 32px; color: var(--cream-100);">Portfólio</a>
+    <a href="#clientes" onClick="{{ toggleNav }}" style="font-family: var(--font-display); font-size: 32px; color: var(--cream-100);">Clientes</a>
+    <a href="#sobre" onClick="{{ toggleNav }}" style="font-family: var(--font-display); font-size: 32px; color: var(--cream-100);">Sobre</a>
+    <a href="#contato" onClick="{{ toggleNav }}" style="font-family: var(--font-display); font-size: 32px; color: var(--cream-100);">Contato</a>
+    <a href="#contato" onClick="{{ toggleNav }}" style="font-family: var(--font-body); font-size: 16px; padding: 14px 28px; background: var(--yellow-green-500); color: var(--ink-900); font-weight: 600; margin-top: 16px;">Fale com nosso time</a>
+  </div>
+
+  <section data-bg="dark" id="hero" style="background: var(--ink-900); padding: 180px 0 140px; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 85% 15%, rgba(195,216,46,0.14), transparent 65%), radial-gradient(ellipse 700px 500px at 100% 100%, rgba(229,88,18,0.10), transparent 60%); pointer-events: none;"></div>
+    <div id="hero-grid" style="position: absolute; inset: 0; background-image: linear-gradient(var(--rule-dark) 1px, transparent 1px), linear-gradient(90deg, var(--rule-dark) 1px, transparent 1px); background-size: 64px 64px; opacity: 0.25; mask-image: linear-gradient(to bottom, black, transparent 80%); pointer-events: none;"></div>
+    <div id="hero-particles" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden;"></div>
+    <canvas id="hero-network" style="position: absolute; inset: 0; pointer-events: none;"></canvas>
+    <div class="sg-container" style="margin-top: 0; max-width: 920px; position: relative;">
+      <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--yellow-green-500); margin-bottom: 28px;">Agência de marketing estratégico</div>
+      <h1 id="hero-heading" style="font-family: var(--font-display); font-weight: 500; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.05; letter-spacing: var(--ls-tight); color: var(--cream-100); margin: 0 0 40px;">Estratégia, demanda e conteúdo <em style="font-style: italic; color: var(--yellow-green-500);">integrados</em> em uma só operação.</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: var(--text-muted-dark); max-width: 520px; margin: 0 0 48px;">Conectamos estratégia, geração de demanda e conteúdo para construir operações de marketing que geram resultados.</p>
+      <a href="#contato" class="sg-cta-btn sg-cta-hero"><span class="sg-cta-pill" style="background: var(--cream-100); color: var(--ink-900);">Agende uma reunião estratégica</span><span class="sg-cta-circle" style="background: var(--yellow-green-500);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    </div>
+  </section>
+
+  <section data-bg="light" id="abordagem" style="background: var(--cream-100); padding: 160px 0;">
+    <div class="sg-container sg-abordagem-split" style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 96px;">
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 32px;">Nosso framework</div>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.05; letter-spacing: var(--ls-tight); margin: 0 0 32px;">Como<br>construímos<br><em style="font-style: italic; color: var(--yellow-green-500);">operações de crescimento</em><span style="color: var(--ink-900);">.</span></h2>
+        <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-light); max-width: 380px; margin: 0 0 40px;">Um processo claro que transforma marketing de centro de custo no motor de crescimento mais confiável do negócio.</p>
+        <a href="#sobre" class="sg-cta-btn"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900);">Sobre a Seed Grow</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+      </div>
+      <div>
+        <div style="display: flex; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule-light);">
+          <div style="font-size: 13px; color: var(--text-muted-light); width: 15px; flex-shrink: 0; padding-top: 6px; background-color: var(--yellow-green-500); height: 23px"><b>01</b></div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 26px; margin-bottom: 10px;">Diagnóstico</div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 460px;">Entendemos o negócio antes de qualquer decisão.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule-light);">
+          <div style="font-size: 13px; color: var(--text-muted-light); width: 15px; flex-shrink: 0; padding-top: 6px; height: 25px; background-color: var(--yellow-green-500)"><b>02</b></div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 26px; margin-bottom: 10px;">Estratégia</div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 460px;">Desenhamos o caminho para resolver o que o diagnóstico revelou.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule-light);">
+          <div style="font-size: 13px; color: var(--text-muted-light); width: 15px; flex-shrink: 0; padding-top: 6px; height: 25px; background-color: var(--accent-primary)"><b>03</b></div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 26px; margin-bottom: 10px;">Planejamento</div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 460px;">Cada ação ganha prioridade, prazo e métrica antes de sair do papel.</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule-light); border-bottom: 1px solid var(--rule-light);">
+          <div style="font-size: 13px; color: var(--text-muted-light); width: 16px; flex-shrink: 0; padding-top: 6px; height: 25px; background-color: var(--accent-primary)"><b>04</b></div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 26px; margin-bottom: 10px;">Geração de demanda</div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 460px;">Criação, mídia e BI entram em jogo, com análise contínua, maximizando os resultados.</div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section data-bg="dark" id="clientes" style="background: var(--ink-900); padding: 160px 0 120px; overflow: hidden;">
+    <div class="sg-container">
+      <div style="text-align: left; margin-bottom: 64px;">
+        <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted-dark);">Conheça nossos clientes</div>
+      </div>
+    </div>
+    <div class="sg-marquee-row" id="marquee-row-1" style="filter: brightness(0) invert(1); margin-bottom: clamp(40px, 5vw, 64px);">
+      <div class="sg-marquee-track" id="marquee-track-1">
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-0" src="assets/logo-ifood.avif" alt="Logo iFood" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-1" src="assets/logo-outback.png" alt="Logo Outback" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-2" src="assets/logo-letrus.avif" alt="Logo Letrus" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-3" src="assets/logo-smarthis.avif" alt="Logo Smarthis" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-4" src="assets/logo-eduk.avif" alt="Logo eduK" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-5" src="assets/logo-zap.avif" alt="Logo Zap Imóveis" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1a-6" src="assets/logo-spotify.png" alt="Logo Spotify" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-0" src="assets/logo-ifood.avif" alt="Logo iFood" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-1" src="assets/logo-outback.png" alt="Logo Outback" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-2" src="assets/logo-letrus.avif" alt="Logo Letrus" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-3" src="assets/logo-smarthis.avif" alt="Logo Smarthis" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-4" src="assets/logo-eduk.avif" alt="Logo eduK" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-5" src="assets/logo-zap.avif" alt="Logo Zap Imóveis" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r1b-6" src="assets/logo-spotify.png" alt="Logo Spotify" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+      </div>
+    </div>
+    <div class="sg-marquee-row" id="marquee-row-2" style="filter: brightness(0) invert(1);">
+      <div class="sg-marquee-track sg-marquee-track-rev" id="marquee-track-2">
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-0" src="assets/logo-resilia.avif" alt="Logo Resilia" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-1" src="assets/logo-olx.png" alt="Logo OLX" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-2" src="assets/logo-natura.png" alt="Logo Natura" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-3" src="assets/logo-mindlab.avif" alt="Logo Mind Lab" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-4" src="assets/logo-topemployers.png" alt="Logo Top Employers" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2a-5" src="assets/logo-hw.avif" alt="Logo Hardwork Medicina" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-0" src="assets/logo-resilia.avif" alt="Logo Resilia" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-1" src="assets/logo-olx.png" alt="Logo OLX" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-2" src="assets/logo-natura.png" alt="Logo Natura" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-3" src="assets/logo-mindlab.avif" alt="Logo Mind Lab" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-4" src="assets/logo-topemployers.png" alt="Logo Top Employers" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+        <div class="sg-marquee-logo"><img id="client-logo-r2b-5" src="assets/logo-hw.avif" alt="Logo Hardwork Medicina" style="height:100%;width:auto;object-fit:contain;display:block;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bg="dark" id="capacidades" style="background: var(--ink-900); padding: 72px 0 140px;">
+    <div class="sg-container sg-abordagem-split" style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 96px; margin-bottom: 80px;">
+      <div>
+        <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--yellow-green-500); margin-bottom: 24px;">Como ajudamos nossos clientes</div>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; color: var(--cream-100); margin: 0;">Marketing que exige uma&nbsp;<em style="font-style: italic; color: var(--yellow-green-500);">operação integrada.</em></h2>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <p style="font-size: 19px; line-height: 1.65; color: var(--text-muted-dark); margin: 0;">As decisões mais eficientes não nascem isoladas. Nascem quando estratégia, geração de demanda e conteúdo operam como um só sistema, cada frente orientando a outra, com o mesmo objetivo: crescimento consistente.</p>
+      </div>
+    </div>
+    <div class="sg-container">
+      <div class="sg-capacity-row" style="display: flex; gap: 16px; align-items: stretch;">
+        <div class="sg-capacity-card" onClick="{{ toggleService1 }}" style="{{ card1Style }}">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span style="font-size: 13px; color: var(--text-muted-dark);">01</span>
+            <span style="font-size: 20px; color: var(--yellow-green-500); line-height: 1;">{{ service1Icon }}</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--cream-100); line-height: 1.15;">Estratégia</div>
+            <sc-if value="{{ service1Closed }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--text-muted-dark); margin-top: 6px;">Direção antes da execução</div>
+            </sc-if>
+            <sc-if value="{{ service1Open }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--yellow-green-500); line-height: 1.35; margin: 20px 0 24px;">"Onde investir primeiro?"</div>
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-dark); margin-bottom: 8px;">Objetivo</div>
+              <div style="font-size: 15px; line-height: 1.6; color: var(--text-muted-dark);">Diagnosticamos o negócio e definimos onde a estratégia deve atuar para gerar mais resultado.</div>
+            </sc-if>
+          </div>
+        </div>
+        <div class="sg-capacity-card" onClick="{{ toggleService2 }}" style="{{ card2Style }}">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span style="font-size: 13px; color: var(--text-muted-dark);">02</span>
+            <span style="font-size: 20px; color: var(--yellow-green-500); line-height: 1;">{{ service2Icon }}</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--cream-100); line-height: 1.15;">Planejamento</div>
+            <sc-if value="{{ service2Closed }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--text-muted-dark); margin-top: 6px;">Estratégia em ação</div>
+            </sc-if>
+            <sc-if value="{{ service2Open }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--yellow-green-500); line-height: 1.35; margin: 20px 0 24px;">"O que fazer, em que ordem?"</div>
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-dark); margin-bottom: 8px;">Objetivo</div>
+              <div style="font-size: 15px; line-height: 1.6; color: var(--text-muted-dark);">Priorizamos iniciativas com prazo, responsável e métrica antes de qualquer execução.</div>
+            </sc-if>
+          </div>
+        </div>
+        <div class="sg-capacity-card" onClick="{{ toggleService3 }}" style="{{ card3Style }}">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span style="font-size: 13px; color: var(--text-muted-dark);">03</span>
+            <span style="font-size: 20px; color: var(--yellow-green-500); line-height: 1;">{{ service3Icon }}</span>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 32px; color: var(--cream-100); line-height: 1.15;">Geração de Demanda</div>
+            <sc-if value="{{ service3Closed }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--text-muted-dark); margin-top: 6px;">Estratégia em resultado</div>
+            </sc-if>
+            <sc-if value="{{ service3Open }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--yellow-green-500); line-height: 1.35; margin: 20px 0 24px;">"Como transformar atenção em pipeline?"</div>
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-dark); margin-bottom: 8px;">Objetivo</div>
+              <div style="font-size: 15px; line-height: 1.6; color: var(--text-muted-dark);">Mídia e criação trabalham juntos, com otimização contínua guiada por dados.</div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section data-bg="dark" id="portfolio" style="background: var(--ink-900); overflow: hidden; position: relative; padding: 120px 0;">
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(rgba(244,245,236,0.14) 1px, transparent 1px); background-size: 28px 28px; opacity: 0.5;"></div>
+    <div class="sg-container" style="position: relative;">
+      <div style="margin-bottom: 56px;">
+        <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-muted-dark); margin-bottom: 24px;">PORTFÓLIO DE CONTEÚDO SEED FILMES</div>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; color: var(--cream-100); margin: 0; max-width: 720px;">Projetos que posicionam marcas como referência.</h2>
+      </div>
+      <div style="position: relative;">
+        <button onClick="{{ scrollPortfolioPrev }}" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">←</button>
+        <button onClick="{{ scrollPortfolioNext }}" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">→</button>
+        <div id="portfolio-mosaic" ref="{{ portfolioScrollRef }}" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none;">
+        <div class="sg-portfolio-card" data-idx="0" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb0 }}" alt="iFood" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed0 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity0 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Natal Natura</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Bastidores de uma campanha nacional</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="1" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb1 }}" alt="Resilia" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed1 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 460px; height: 460px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity1 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Resilia</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Institucional de reposicionamento de marca</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="2" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb2 }}" alt="Outback" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed2 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 818px; height: 460px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity2 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Outback</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Série de lançamento de produto</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="3" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb3 }}" alt="Zap Imóveis" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed3 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity3 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Zap Imóveis</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Depoimentos de clientes reais</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="4" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb4 }}" alt="OLX" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed4 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity4 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">OLX</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Campanha sazonal de performance</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="5" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb5 }}" alt="Natura" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed5 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity5 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Natura</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Conteúdo de marca para redes sociais</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="6" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb6 }}" alt="Hardwork Medicina" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed6 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 818px; height: 460px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity6 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Hardwork Medicina</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Conteúdo de autoridade médica</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="7" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb7 }}" alt="eduK" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed7 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity7 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">eduK</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Série educativa para lançamento de curso</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="8" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);">
+            <image-slot id="portfolio-video-9" shape="rect" placeholder="Vídeo — Spotify"></image-slot>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Spotify</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Playlist de marca e conteúdo sonoro</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="9" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb9 }}" alt="Letrus" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed9 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity9 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Letrus</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Série de conteúdo educacional</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="10" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb10 }}" alt="Mind Lab" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed10 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 818px; height: 460px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity10 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Mind Lab</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Conteúdo institucional de posicionamento</div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-portfolio-card" data-idx="11" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
+          <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
+            <img src="{{ thumb11 }}" alt="Smarthis" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+            <iframe src="{{ embed11 }}" allow="autoplay; fullscreen" style="position: absolute; top: 50%; left: 50%; width: 345px; height: 613px; transform: translate(-50%, -50%); border: none; pointer-events: none; opacity: {{ hoverOpacity11 }}; transition: opacity 0.35s ease;"></iframe>
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3,48,47,0.9) 100%); pointer-events: none;"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;"><div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(3,48,47,0.55); display: flex; align-items: center; justify-content: center; color: var(--cream-100); font-size: 14px;">▶</div></div>
+            <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; pointer-events: none;">
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; color: var(--cream-100); line-height: 1.2;">Smarthis</div>
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted-dark); margin-top: 4px;">Depoimentos e cases de sucesso</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bg="light" id="sobre" style="background: var(--cream-100); padding: 140px 0;">
+    <div class="sg-container sg-sobre-split" style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 96px; align-items: center;">
+      <div style="aspect-ratio: 4/5;">
+        <image-slot id="sobre-photo" shape="rect" placeholder="Foto do time / escritório Seed Grow"></image-slot>
+      </div>
+      <div>
+        <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 24px;">A Agência Seed Grow</div>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 56px; line-height: 1.15; color: var(--ink-900); margin: 0 0 32px">Sobre <em style="font-style: italic; color: var(--accent-primary)">nós</em></h2>
+        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;">Somos uma <em style="font-style: italic;">agência de marketing</em> especializada em operações de marketing que integram estratégia, geração de demanda e conteúdo para acelerar o crescimento dos negócios.</p>
+        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 24px;">Há mais de 7 anos, ajudamos empresas de diferentes segmentos a transformar objetivos em <span style="color: var(--ink-900)"><b>resultados sustentáveis</b></span>.</p>
+        <p style="font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink-900); margin: 0 0 40px;">Acreditamos que toda operação de marketing eficiente começa da mesma forma: entendendo o negócio, definindo uma <span style="text-decoration: underline; text-decoration-color: var(--yellow-green-500); text-decoration-thickness: 3px; text-underline-offset: 4px; color: var(--ink-900)"><b>estratégia clara</b></span> e executando cada etapa com propósito.</p>
+        <a href="#contato" class="sg-cta-btn"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900);">Quero falar com o time</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-bg="dark" id="contato" style="background: var(--ink-900); padding: 160px 0;">
+    <div class="sg-container sg-contato-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 96px;">
+      <div>
+        <h2 style="font-family: var(--font-display); font-weight: 500; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: var(--cream-100); margin: 0 0 16px;">Vamos conversar sobre o seu <em style="font-style: italic; color: var(--yellow-green-500);">negócio</em>.</h2>
+        <p style="font-size: 17px; color: var(--text-muted-dark); margin: 0 0 40px; max-width: 380px;">Uma conversa estratégica para entender seu momento, identificar oportunidades e avaliar como podemos ajudar sua empresa a crescer.</p>
+      </div>
+      <div>
+      <div style="background: var(--cream-100); border-radius: 16px; padding: 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.3);">
+        <div style="display: flex; align-items: center; gap: 10px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--rule-light);">
+          
+          <span style="font-family: var(--font-display); font-weight: 700; font-size: 24px; color: var(--ink-900);">Formulário de contato</span>
+        </div>
+      <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ handleSubmit }}" style="display: flex; flex-direction: column; gap: 20px;">
+          <input type="text" name="website" tabIndex="-1" autoComplete="off" ref="{{ honeypotRef }}" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Nome *</label>
+            <input type="text" placeholder="Seu nome completo" required="{{ true }}" ref="{{ nomeRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">E-mail *</label>
+            <input type="email" placeholder="nome@empresa.com" required="{{ true }}" ref="{{ emailRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Telefone</label>
+            <input type="tel" placeholder="(11) 99999-9999" ref="{{ telefoneRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Empresa</label>
+            <input type="text" placeholder="Nome da empresa" ref="{{ empresaRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Como podemos ajudar?</label>
+            <textarea rows="3" placeholder="Conte um pouco sobre o momento da sua empresa..." ref="{{ mensagemRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none; resize: none;"></textarea>
+          </div>
+          <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size: 13px; color: var(--cayenne-500); background: rgba(229,88,18,0.08); border-radius: 8px; padding: 12px 14px;">{{ formError }}</div>
+          </sc-if>
+          <button type="submit" disabled="{{ formSubmitting }}" class="sg-cta-btn" style="margin-top: 8px; border: none; cursor: pointer; opacity: {{ submitOpacity }}; align-self: flex-start;"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900); font-size: 14px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;">{{ submitLabel }}</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></button>
+          <div style="font-size: 12px; color: var(--text-muted-light); text-align: center; line-height: 1.5;">Ao enviar, você concorda em ser contatado pelo nosso time.</div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 24px 0;">
+          <div style="font-family: var(--font-display); font-size: 22px; color: var(--ink-900); margin-bottom: 12px;">Recebemos sua mensagem.</div>
+          <div style="font-size: 16px; color: var(--text-muted-light);">Retornamos em breve.</div>
+        </div>
+      </sc-if>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--ink-900); padding: 64px 0;">
+    <div class="sg-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+      <img src="assets/logo-light.png" alt="Seed Grow" style="height: 18px; width: auto;">
+      <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+        <a href="#capacidades" style="font-size: 13px; color: var(--text-muted-dark);">Serviços</a>
+        <a href="#sobre" style="font-size: 13px; color: var(--text-muted-dark);">Sobre</a>
+      </div>
+      <div style="font-size: 13px; color: var(--text-muted-dark);">© 2026 Seed Grow</div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { navOpen: false, formSubmitted: false, formSubmitting: false, formError: null, openService: 1, cinemaIndex: null, cinemaEntered: false, hoverIdx: null, thumbs: {} };
+
+  SUPABASE_URL = 'https://mfapudrzukmfjcsmhpmn.supabase.co';
+  SUPABASE_KEY = 'sb_publishable_mMfOhG7_atrsY2jyZJbtjQ_LoO5TLBO';
+  nomeRef = React.createRef();
+  emailRef = React.createRef();
+  telefoneRef = React.createRef();
+  empresaRef = React.createRef();
+  mensagemRef = React.createRef();
+  honeypotRef = React.createRef();
+  portfolioScrollRef = React.createRef();
+  formLoadedAt = Date.now();
+
+  portfolioItems = [
+    { client: 'iFood', title: 'Bastidores de uma campanha nacional', ratio: '9/16', vimeoId: '1212212435' },
+    { client: 'Resilia', title: 'Institucional de reposicionamento de marca', ratio: '1/1', vimeoId: '1212211753' },
+    { client: 'Outback', title: 'Série de lançamento de produto', ratio: '16/9', vimeoId: '1212211724' },
+    { client: 'Zap Imóveis', title: 'Depoimentos de clientes reais', ratio: '9/16', vimeoId: '1212212127' },
+    { client: 'OLX', title: 'Campanha sazonal de performance', ratio: '9/16', vimeoId: '1212211960' },
+    { client: 'Natura', title: 'Conteúdo de marca para redes sociais', ratio: '9/16', vimeoId: '1212212007' },
+    { client: 'Hardwork Medicina', title: 'Conteúdo de autoridade médica', ratio: '16/9', vimeoId: '1212211725' },
+    { client: 'eduK', title: 'Série educativa para lançamento de curso', ratio: '9/16', vimeoId: '1212211946' },
+    { client: 'Spotify', title: 'Playlist de marca e conteúdo sonoro', ratio: '1/1', vimeoId: null },
+    { client: 'Letrus', title: 'Série de conteúdo educacional', ratio: '9/16', vimeoId: '1212211101' },
+    { client: 'Mind Lab', title: 'Conteúdo institucional de posicionamento', ratio: '16/9', vimeoId: '1212211004' },
+    { client: 'Smarthis', title: 'Depoimentos e cases de sucesso', ratio: '9/16', vimeoId: '1212211102' },
+  ];
+
+  openCinema = (e) => {
+    const card = e.currentTarget.closest('.sg-portfolio-card');
+    const idx = card ? parseInt(card.dataset.idx, 10) : 0;
+    this.setState({ cinemaIndex: idx, cinemaEntered: false });
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ cinemaEntered: true })));
+  };
+  closeCinema = () => {
+    this.setState({ cinemaEntered: false });
+    setTimeout(() => this.setState({ cinemaIndex: null }), 450);
+  };
+  stopPropagation = (e) => e.stopPropagation();
+  vimeoEmbedUrl = (id) => `https://player.vimeo.com/video/${id}?badge=0&autopause=0&player_id=0&app_id=58479&byline=0&portrait=0&title=0&dnt=1&autoplay=1`;
+  vimeoBgEmbedUrl = (id) => `https://player.vimeo.com/video/${id}?background=1&autoplay=1&loop=1&muted=1&byline=0&portrait=0&title=0&badge=0&app_id=58479&dnt=1`;
+  hoverIn = (e) => {
+    const card = e.currentTarget.closest('.sg-portfolio-card');
+    const idx = card ? parseInt(card.dataset.idx, 10) : null;
+    this.setState({ hoverIdx: idx });
+  };
+  hoverOut = () => this.setState({ hoverIdx: null });
+  scrollPortfolioPrev = () => this.portfolioScrollRef.current && this.portfolioScrollRef.current.scrollBy({ left: -324, behavior: 'smooth' });
+  scrollPortfolioNext = () => this.portfolioScrollRef.current && this.portfolioScrollRef.current.scrollBy({ left: 324, behavior: 'smooth' });
+
+  fetchThumbnails = () => {
+    this.portfolioItems.forEach((item, i) => {
+      if (!item.vimeoId) return;
+      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${item.vimeoId}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (data && data.thumbnail_url) {
+            this.setState(s => ({ thumbs: { ...s.thumbs, [i]: data.thumbnail_url } }));
+          }
+        })
+        .catch(() => {});
+    });
+  };
+
+  componentDidMount() {
+    this.fetchThumbnails();
+    this.setupParticles();
+    this.setupMarquee('marquee-row-1', 'marquee-track-1', -1, 40);
+    this.setupMarquee('marquee-row-2', 'marquee-track-2', 1, 44);
+    this.setupParticleNetwork();
+    this.setupPortfolioMagnetic();
+    this.setupPortfolioParallax();
+    this.setupHeaderContrast();
+  }
+
+  setupPortfolioParallax() {
+    const section = document.getElementById('portfolio');
+    const layer = document.getElementById('portfolio-bg-layer');
+    if (!section || !layer) return;
+    let current = 0, target = 0;
+    const compute = () => {
+      const rect = section.getBoundingClientRect();
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      target = (progress - 0.5) * 260;
+    };
+    const tick = () => {
+      current += (target - current) * 0.08;
+      layer.style.transform = `translateY(${current}px)`;
+      requestAnimationFrame(tick);
+    };
+    window.addEventListener('scroll', compute, { passive: true });
+    window.addEventListener('resize', compute);
+    compute();
+    requestAnimationFrame(tick);
+  }
+
+  setupHeaderContrast() {
+    const logo = document.getElementById('site-logo');
+    const lines = document.querySelectorAll('.sg-burger-line');
+    if (!logo) return;
+    logo.style.transition = 'opacity 0.35s ease';
+    lines.forEach((l) => { l.style.transition = 'background 0.35s ease'; });
+    let currentMode = null;
+    const check = () => {
+      const el = document.elementFromPoint(140, 120);
+      const section = el && el.closest('[data-bg]');
+      const mode = section ? section.dataset.bg : 'dark';
+      if (mode === currentMode) return;
+      currentMode = mode;
+      logo.style.opacity = '0';
+      lines.forEach((l) => { l.style.background = mode === 'light' ? 'var(--ink-900)' : 'var(--cream-100)'; });
+      setTimeout(() => {
+        logo.src = mode === 'light' ? 'assets/logo-dark.png' : 'assets/logo-light.png';
+        logo.style.opacity = '1';
+      }, 180);
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+  }
+
+  setupPortfolioMagnetic() {
+    const cards = document.querySelectorAll('.sg-portfolio-card');
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `translate(${x * 14}px, ${y * 14 - 6}px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  setupPortfolioReveal() {
+    const cards = document.querySelectorAll('.sg-portfolio-card');
+    if (!cards.length) return;
+    const reveal = (el, i) => {
+      if (el.classList.contains('is-visible')) return;
+      setTimeout(() => el.classList.add('is-visible'), i * 60);
+    };
+    try {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const i = Array.from(cards).indexOf(entry.target);
+            reveal(entry.target, i);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.01 });
+      cards.forEach((c) => obs.observe(c));
+    } catch (e) {}
+    // safety fallback: never leave the gallery blank if the observer doesn't fire
+    setTimeout(() => cards.forEach((c, i) => reveal(c, i)), 1200);
+  }
+
+  setupParticleNetwork() {
+    const hero = document.getElementById('hero');
+    const canvas = document.getElementById('hero-network');
+    const particlesContainer = document.getElementById('hero-particles');
+    if (!hero || !canvas || !particlesContainer) return;
+    const ctx = canvas.getContext('2d');
+    let mouse = { x: -9999, y: -9999 };
+    const resize = () => {
+      const r = hero.getBoundingClientRect();
+      canvas.width = r.width;
+      canvas.height = r.height;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    hero.addEventListener('mousemove', (e) => {
+      const r = hero.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+    const radius = 170;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const heroRect = hero.getBoundingClientRect();
+      const dots = particlesContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        const r = dots[i].getBoundingClientRect();
+        const px = r.left + r.width / 2 - heroRect.left;
+        const py = r.top + r.height / 2 - heroRect.top;
+        const dx = px - mouse.x, dy = py - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < radius) {
+          const alpha = (1 - dist / radius) * 0.55;
+          ctx.strokeStyle = `rgba(195,216,46,${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(mouse.x, mouse.y);
+          ctx.lineTo(px, py);
+          ctx.stroke();
+        }
+      }
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+
+  setupMarquee(rowId, trackId, dir, durationSec) {
+    const row = document.getElementById(rowId);
+    const track = document.getElementById(trackId);
+    if (!row || !track) return;
+    const halfWidth = track.scrollWidth / 2;
+    const baseSpeed = halfWidth / durationSec;
+    let speed = baseSpeed;
+    let targetSpeed = baseSpeed;
+    let pos = 0;
+    let last = performance.now();
+    row.addEventListener('mouseenter', () => { targetSpeed = baseSpeed * 0.2; });
+    row.addEventListener('mouseleave', () => { targetSpeed = baseSpeed; });
+    const tick = (now) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      speed += (targetSpeed - speed) * Math.min(1, dt * 2);
+      pos += dir * speed * dt;
+      if (pos <= -halfWidth) pos += halfWidth;
+      if (pos >= 0) pos -= halfWidth;
+      track.style.transform = `translateX(${pos}px)`;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame((t) => { last = t; requestAnimationFrame(tick); });
+  }
+
+  setupParticles() {
+    const container = document.getElementById('hero-particles');
+    if (!container) return;
+    const count = 46;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      const size = 2 + Math.random() * 4;
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const duration = 12 + Math.random() * 12;
+      const delay = -Math.random() * duration;
+      const drift = 20 + Math.random() * 30;
+      p.style.position = 'absolute';
+      p.style.left = left + '%';
+      p.style.top = top + '%';
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.borderRadius = '50%';
+      p.style.background = Math.random() > 0.5 ? 'rgba(195,216,46,0.55)' : 'rgba(244,245,236,0.3)';
+      p.style.transition = 'transform 0.25s ease, background 0.25s ease';
+      p.style.pointerEvents = 'auto';
+      p.style.setProperty('--drift', drift + 'px');
+      p.style.animation = `sg-float ${duration}s ease-in-out ${delay}s infinite`;
+      p.addEventListener('mouseenter', () => {
+        p.style.transform = 'scale(2.4)';
+        p.style.background = 'rgba(195,216,46,0.9)';
+      });
+      p.addEventListener('mouseleave', () => {
+        p.style.transform = '';
+        p.style.background = Math.random() > 0.5 ? 'rgba(195,216,46,0.55)' : 'rgba(244,245,236,0.3)';
+      });
+      container.appendChild(p);
+    }
+  }
+
+  toggleNav = () => this.setState(s => ({ navOpen: !s.navOpen }));
+  toggleService = (n) => this.setState(s => ({ openService: s.openService === n ? null : n }));
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.formSubmitting) return;
+
+    const nome = this.nomeRef.current?.value.trim() || '';
+    const email = this.emailRef.current?.value.trim() || '';
+    if (!nome || !email) {
+      this.setState({ formError: 'Preencha nome e e-mail.' });
+      return;
+    }
+
+    this.setState({ formSubmitting: true, formError: null });
+
+    const payload = {
+      nome,
+      email,
+      telefone: this.telefoneRef.current?.value.trim() || '',
+      empresa: this.empresaRef.current?.value.trim() || '',
+      mensagem: this.mensagemRef.current?.value.trim() || '',
+      website: this.honeypotRef.current?.value || '',
+      loadedAt: this.formLoadedAt,
+      origem: 'site',
+      landing_page: typeof window !== 'undefined' ? window.location.href : '',
+    };
+
+    fetch(`${this.SUPABASE_URL}/functions/v1/submit-lead`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: this.SUPABASE_KEY,
+        Authorization: `Bearer ${this.SUPABASE_KEY}`,
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(15000),
+    })
+      .then((res) => res.json().catch(() => ({ success: false })))
+      .then((data) => {
+        if (data.success) {
+          this.setState({ formSubmitted: true, formSubmitting: false });
+        } else {
+          this.setState({ formSubmitting: false, formError: data.error || 'Não foi possível enviar. Tente novamente.' });
+        }
+      })
+      .catch((err) => {
+        const msg = err.name === 'TimeoutError' ? 'O envio demorou demais. Tente novamente.' : 'Falha de conexão. Verifique sua internet e tente novamente.';
+        this.setState({ formSubmitting: false, formError: msg });
+      });
+  };
+
+  renderVals() {
+    const navOpen = this.state.navOpen;
+    return {
+      navOpen,
+      toggleNav: this.toggleNav,
+      handleSubmit: this.handleSubmit,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      formSubmitting: this.state.formSubmitting,
+      formError: this.state.formError,
+      submitLabel: this.state.formSubmitting ? 'Enviando...' : '✓ Enviar mensagem',
+      submitOpacity: this.state.formSubmitting ? 0.6 : 1,
+      nomeRef: this.nomeRef,
+      emailRef: this.emailRef,
+      telefoneRef: this.telefoneRef,
+      empresaRef: this.empresaRef,
+      mensagemRef: this.mensagemRef,
+      honeypotRef: this.honeypotRef,
+      openCinema: this.openCinema,
+      closeCinema: this.closeCinema,
+      stopPropagation: this.stopPropagation,
+      cinemaOpen: this.state.cinemaIndex !== null,
+      cinemaClient: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].client : '',
+      cinemaTitle: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].title : '',
+      cinemaRatio: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].ratio : '16/9',
+      cinemaPlaceholder: this.state.cinemaIndex !== null ? `Vídeo — ${this.portfolioItems[this.state.cinemaIndex].client}` : '',
+      cinemaVimeoId: this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].vimeoId : null,
+      cinemaEmbedUrl: this.state.cinemaIndex !== null && this.portfolioItems[this.state.cinemaIndex].vimeoId ? this.vimeoEmbedUrl(this.portfolioItems[this.state.cinemaIndex].vimeoId) : '',
+      cinemaHasVideo: this.state.cinemaIndex !== null && !!this.portfolioItems[this.state.cinemaIndex].vimeoId,
+      cinemaNoVideo: this.state.cinemaIndex !== null && !this.portfolioItems[this.state.cinemaIndex].vimeoId,
+      cinemaBackdropStyle: `position: fixed; inset: 0; z-index: 300; background: rgba(1,8,7,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 40px; opacity: ${this.state.cinemaEntered ? 1 : 0}; transition: opacity 0.5s ease;`,
+      cinemaBeamStyle: `position: absolute; inset: 0; background: radial-gradient(ellipse 45% 90% at 50% 0%, rgba(76,175,120,0.55), transparent 72%); opacity: ${this.state.cinemaEntered ? 1 : 0}; transition: opacity 0.6s ease; pointer-events: none;`,
+      cinemaPanelStyle: `position: relative; max-height: 74vh; max-width: 84vw; aspect-ratio: ${this.state.cinemaIndex !== null ? this.portfolioItems[this.state.cinemaIndex].ratio : '16/9'}; width: auto; height: 74vh; border: 3px solid var(--yellow-green-500); box-shadow: 0 0 60px 8px rgba(76,175,120,0.2), 0 30px 70px rgba(0,0,0,0.45); border-radius: 24px; overflow: hidden; background: #000; transform: scale(${this.state.cinemaEntered ? 1 : 0.96}); opacity: ${this.state.cinemaEntered ? 1 : 0}; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;`,
+      cinemaCloseStyle: `position: absolute; top: 28px; right: 32px; opacity: ${this.state.cinemaEntered ? 1 : 0}; width: 48px; height: 48px; border-radius: 50%; background: var(--yellow-green-500); border: none; color: var(--ink-900); font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.4s ease 0.1s; z-index: 2;`,
+      hoverIn: this.hoverIn,
+      hoverOut: this.hoverOut,
+      portfolioScrollRef: this.portfolioScrollRef,
+      scrollPortfolioPrev: this.scrollPortfolioPrev,
+      scrollPortfolioNext: this.scrollPortfolioNext,
+      ...(() => {
+        const hoverVals = {};
+        this.portfolioItems.forEach((item, i) => {
+          if (!item.vimeoId) return;
+          hoverVals[`hoverOpacity${i}`] = this.state.hoverIdx === i ? 1 : 0;
+          hoverVals[`embed${i}`] = this.vimeoBgEmbedUrl(item.vimeoId);
+          hoverVals[`thumb${i}`] = this.state.thumbs[i] || `https://vumbnail.com/${item.vimeoId}.jpg`;
+        });
+        return hoverVals;
+      })(),
+      mobileNavStyle: `position:fixed;inset:0;z-index:100;background:var(--ink-900);display:${navOpen ? 'flex' : 'none'};flex-direction:column;align-items:center;justify-content:center;gap:28px;`,
+      toggleService1: () => this.toggleService(1),
+      toggleService2: () => this.toggleService(2),
+      toggleService3: () => this.toggleService(3),
+      service1Open: this.state.openService === 1,
+      service2Open: this.state.openService === 2,
+      service3Open: this.state.openService === 3,
+      service1Closed: this.state.openService !== 1,
+      service2Closed: this.state.openService !== 2,
+      service3Closed: this.state.openService !== 3,
+      service1Icon: this.state.openService === 1 ? '×' : '+',
+      service2Icon: this.state.openService === 2 ? '×' : '+',
+      service3Icon: this.state.openService === 3 ? '×' : '+',
+      card1Style: `background:${this.state.openService === 1 ? 'var(--ink-800)' : 'transparent'};border:1px solid ${this.state.openService === 1 ? 'var(--yellow-green-500)' : 'var(--rule-dark)'};flex-grow:${this.state.openService === 1 ? 2.2 : 1};flex-basis:0;`,
+      card2Style: `background:${this.state.openService === 2 ? 'var(--ink-800)' : 'transparent'};border:1px solid ${this.state.openService === 2 ? 'var(--yellow-green-500)' : 'var(--rule-dark)'};flex-grow:${this.state.openService === 2 ? 2.2 : 1};flex-basis:0;`,
+      card3Style: `background:${this.state.openService === 3 ? 'var(--ink-800)' : 'transparent'};border:1px solid ${this.state.openService === 3 ? 'var(--yellow-green-500)' : 'var(--rule-dark)'};flex-grow:${this.state.openService === 3 ? 2.2 : 1};flex-basis:0;`,
+    };
+  }
+}
+</script>
+</body>
+</html>
