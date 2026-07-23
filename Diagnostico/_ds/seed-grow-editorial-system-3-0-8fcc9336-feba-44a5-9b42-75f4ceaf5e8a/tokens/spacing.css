@@ -1,0 +1,22 @@
+:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:16px;
+--space-4:24px;
+--space-5:32px;
+--space-6:48px;
+--space-7:64px;
+--space-8:96px;
+--space-9:128px;
+/* editorial slide canvas */
+--slide-w:1080px;
+--slide-h:1350px;
+--slide-margin:96px; /* mandatory safe-area inset — left/right/top; see --slide-margin-bottom */
+--slide-margin-bottom:120px;
+--radius-card:2px;
+--radius-pill:999px;
+/* Post Layout Grid System — modular grid for social posts, built on the 1080x1350 canvas */
+--grid-columns:12; /* @kind other */
+--grid-gutter:24px;
+--grid-margin:var(--slide-margin);
+}
