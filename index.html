@@ -991,5 +991,15 @@ class Component extends DCLogic {
   }
 }
 </script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  var id = a.getAttribute('href').slice(1);
+  var el = document.getElementById(id);
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
