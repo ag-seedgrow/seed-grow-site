@@ -38,6 +38,10 @@
     .sg-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
     .sg-nav-links { display: flex; }
     .sg-burger { display: none; }
+    .sg-scrollspy-desktop { display: flex; }
+    .sg-header-mobile-only { }
+    @media (min-width: 981px) { .sg-header-mobile-only { display: none !important; } }
+    @media (max-width: 980px) { .sg-scrollspy-desktop { display: none !important; } }
     .sg-stats { display: grid; grid-template-columns: repeat(3, 1fr); }
     .sg-clients { display: flex; flex-wrap: wrap; }
     @keyframes sg-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -50,7 +54,7 @@
     .sg-capacity-card:hover { border-color: var(--yellow-green-500) !important; }
     #portfolio-scroll::-webkit-scrollbar { display: none; }
     #portfolio-mosaic::-webkit-scrollbar { display: none; }
-    .sg-cta-btn { position: relative; display: inline-flex; align-items: center; height: 56px; text-decoration: none; }
+    .sg-cta-btn { position: relative; display: inline-flex; align-items: center; height: 56px; text-decoration: none; background: transparent; border: none; padding: 0; -webkit-appearance: none; appearance: none; }
     .sg-cta-pill { position: relative; z-index: 1; display: flex; align-items: center; height: 100%; padding: 0 30px; border-radius: 999px; white-space: nowrap; font-weight: 600; font-size: 15px; transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
     .sg-cta-circle { position: absolute; top: 0; height: 56px; width: 56px; left: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: left 0.45s cubic-bezier(0.65,0,0.35,1); z-index: 2; }
     .sg-cta-circle svg { transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
@@ -73,7 +77,12 @@
     }
     .sg-portfolio-card { opacity: 1; }
     @media (max-width: 980px) { .sg-capacity-row { flex-direction: column; } .sg-capacity-card { flex-grow: 1 !important; } }
-    @media (max-width: 640px) { #portfolio-mosaic { column-count: 1 !important; } }
+    @media (max-width: 640px) {
+      #portfolio-mosaic { column-count: 1 !important; }
+      .sg-portfolio-card { flex: 0 0 86vw !important; }
+      .sg-portfolio-arrow { display: none !important; }
+      .sg-mobile-portfolio-nav { display: flex !important; }
+    }
     @keyframes sg-float { 0%, 100% { transform: translate(0, 0); opacity: 0.5; } 50% { transform: translate(var(--drift), calc(var(--drift) * -1)); opacity: 1; } }
     @media (max-width: 980px) {
       .sg-container { padding: 0 32px; }
@@ -95,10 +104,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div style="font-family: var(--font-body); background: var(--cream-100); color: var(--ink-900); overflow-x: hidden;">
 
-  <a href="#hero" id="site-logo-link" style="position: fixed; top: 32px; left: 96px; z-index: 70; display: flex; align-items: center;">
+  <a href="#hero" id="site-logo-link" class="sg-header-mobile-only" style="position: fixed; top: 32px; left: 96px; z-index: 70; display: flex; align-items: center;">
     <img id="site-logo" src="assets/logo-light.png" alt="Seed Grow" style="height: 20px; width: auto; display: block;">
   </a>
-  <button onClick="{{ toggleNav }}" style="position: fixed; top: 28px; right: 96px; z-index: 70; background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 6px;">
+
+  <nav class="sg-scrollspy-desktop" style="position: fixed; top: 0; left: 0; right: 0; height: 44px; z-index: 65; background: transparent;">
+    <a href="#hero" style="position: absolute; left: 96px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; z-index: 3;">
+      <img id="nav-logo" src="assets/logo-light.png" alt="Seed Grow" style="height: 18px; width: auto; display: block;">
+    </a>
+    <div ref="{{ navMeasureRef }}" style="position: absolute; inset: 0; visibility: hidden; pointer-events: none; display: flex; align-items: center; gap: 8px; padding: 0 64px 0 240px;">
+      <sc-for list="{{ measureNavItems }}" as="mitem" hint-placeholder-count="4">
+        <div data-navid="{{ mitem.id }}" style="{{ mitem.measureStyle }}">{{ mitem.label }}</div>
+      </sc-for>
+    </div>
+    <div style="{{ navLineStyle }}"></div>
+    <sc-for list="{{ allNavItems }}" as="navitem" hint-placeholder-count="7">
+      <a href="{{ navitem.href }}" style="{{ navitem.style }}">{{ navitem.label }}</a>
+    </sc-for>
+  </nav>
+
+  <button onClick="{{ toggleNav }}" class="sg-header-mobile-only" style="position: fixed; top: 28px; right: 96px; z-index: 70; background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 6px;">
     <span class="sg-burger-line" style="width: 24px; height: 2px; background: var(--cream-100); display: block; transition: background 0.3s ease;"></span>
     <span class="sg-burger-line" style="width: 24px; height: 2px; background: var(--cream-100); display: block; transition: background 0.3s ease;"></span>
   </button>
@@ -207,7 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section data-bg="light" id="abordagem" style="background: var(--cream-100); padding: 160px 0;">
+  <section data-bg="light" id="abordagem" style="background: var(--cream-100); padding: 160px 0; scroll-margin-top: 15vh;">
     <div class="sg-container sg-abordagem-split" style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 96px;">
       <div>
         <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 32px;">Nosso framework</div>
@@ -368,8 +393,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; color: var(--cream-100); margin: 0; max-width: 720px;">Projetos que posicionam marcas como referência.</h2>
       </div>
       <div style="position: relative;">
-        <button onClick="{{ scrollPortfolioPrev }}" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">←</button>
-        <button onClick="{{ scrollPortfolioNext }}" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">→</button>
+        <button onClick="{{ scrollPortfolioPrev }}" class="sg-portfolio-arrow" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">←</button>
+        <button onClick="{{ scrollPortfolioNext }}" class="sg-portfolio-arrow" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">→</button>
         <div id="portfolio-mosaic" ref="{{ portfolioScrollRef }}" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none;">
         <div class="sg-portfolio-card" data-idx="0" onClick="{{ openCinema }}" style="flex: 0 0 300px; scroll-snap-align: start; cursor: pointer;">
           <div style="position: relative; box-sizing: border-box; aspect-ratio: 3/4; border-radius: 20px; overflow: hidden; background: rgba(244,245,236,0.06); border: 2px solid transparent; transition: border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color: var(--yellow-green-500); transform: translateY(-4px);" onMouseEnter="{{ hoverIn }}" onMouseLeave="{{ hoverOut }}">
@@ -504,6 +529,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
+      <div class="sg-mobile-portfolio-nav" style="display: none; gap: 16px; justify-content: center; margin-top: 24px;">
+        <button onClick="{{ scrollPortfolioPrev }}" style="width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;">←</button>
+        <button onClick="{{ scrollPortfolioNext }}" style="width: 52px; height: 52px; border-radius: 50%; background: var(--cream-100); border: none; color: var(--ink-900); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;">→</button>
+      </div>
       </div>
     </div>
   </section>
@@ -597,7 +626,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { navOpen: false, formSubmitted: false, formSubmitting: false, formError: null, openService: 1, cinemaIndex: null, cinemaEntered: false, hoverIdx: null, thumbs: {} };
+  state = { navOpen: false, formSubmitted: false, formSubmitting: false, formError: null, openService: 1, cinemaIndex: null, cinemaEntered: false, hoverIdx: null, thumbs: {}, activeNavIndex: 0, navPositions: {}, navLine: { left: 0, top: 22, width: 0, opacity: 0 } };
+
+  navSections = [
+    { id: 'hero', label: 'Início', anchor: 'hero', sectionIds: ['hero'] },
+    { id: 'abordagem', label: 'Framework', anchor: 'abordagem', sectionIds: ['abordagem', 'clientes'] },
+    { id: 'capacidades', label: 'Nosso trabalho', anchor: 'capacidades', sectionIds: ['capacidades', 'portfolio'] },
+    { id: 'sobre', label: 'Sobre', anchor: 'sobre', sectionIds: ['sobre'] },
+    { id: 'contato', label: 'Contato', anchor: 'contato', sectionIds: ['contato'] },
+  ];
+  navSectionIdToGroupIndex = (() => {
+    const map = {};
+    this.navSections.forEach((g, i) => g.sectionIds.forEach((sid) => { map[sid] = i; }));
+    return map;
+  })();
+  navMeasureRef = React.createRef();
 
   SUPABASE_URL = 'https://mfapudrzukmfjcsmhpmn.supabase.co';
   SUPABASE_KEY = 'sb_publishable_mMfOhG7_atrsY2jyZJbtjQ_LoO5TLBO';
@@ -670,7 +713,89 @@ class Component extends DCLogic {
     this.setupPortfolioMagnetic();
     this.setupPortfolioParallax();
     this.setupHeaderContrast();
+    this.setupScrollspyNav();
+    this.setupSmoothAnchors();
   }
+
+  setupSmoothAnchors() {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - marginTop;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.navObserver) this.navObserver.disconnect();
+    if (this.navResizeHandler) window.removeEventListener('resize', this.navResizeHandler);
+  }
+
+  setupScrollspyNav() {
+    const allSectionIds = this.navSections.reduce((acc, g) => acc.concat(g.sectionIds), []);
+    const sections = allSectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!sections.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idx = this.navSectionIdToGroupIndex[entry.target.id];
+          if (idx !== undefined && idx !== this.state.activeNavIndex) {
+            this.setState({ activeNavIndex: idx }, () => this.measureNav());
+          }
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+    sections.forEach((s) => observer.observe(s));
+    this.navObserver = observer;
+    this.navResizeHandler = () => this.measureNav();
+    window.addEventListener('resize', this.navResizeHandler);
+    this.scheduleMeasure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.measureNav());
+  }
+
+  scheduleMeasure = (attempt) => {
+    attempt = attempt || 0;
+    if (this.navMeasureRef.current) {
+      this.measureNav();
+      requestAnimationFrame(() => this.measureNav());
+      return;
+    }
+    if (attempt < 30) requestAnimationFrame(() => this.scheduleMeasure(attempt + 1));
+  };
+
+  measureNav = () => {
+    const container = this.navMeasureRef.current;
+    if (!container) return;
+    const containerRect = container.getBoundingClientRect();
+    const positions = {};
+    container.querySelectorAll('[data-navid]').forEach((node) => {
+      const r = node.getBoundingClientRect();
+      positions[node.dataset.navid] = {
+        left: r.left - containerRect.left,
+        top: r.top - containerRect.top + r.height / 2,
+        width: r.width,
+        height: r.height,
+      };
+    });
+    const activeSection = this.navSections[this.state.activeNavIndex];
+    const nextSection = this.navSections[this.state.activeNavIndex + 1];
+    let line = { left: 0, top: 22, width: 0, opacity: 0 };
+    const activeRect = activeSection && positions[activeSection.id];
+    if (activeRect) {
+      const nextRect = nextSection && positions[nextSection.id];
+      if (nextRect) {
+        line = { left: activeRect.left + activeRect.width, top: activeRect.top, width: Math.max(0, nextRect.left - (activeRect.left + activeRect.width)), opacity: 1 };
+      } else {
+        line = { left: activeRect.left + activeRect.width, top: activeRect.top, width: 0, opacity: 0 };
+      }
+    }
+    this.setState({ navPositions: positions, navLine: line });
+  };
 
   setupPortfolioParallax() {
     const section = document.getElementById('portfolio');
@@ -696,9 +821,12 @@ class Component extends DCLogic {
   setupHeaderContrast() {
     const logo = document.getElementById('site-logo');
     const lines = document.querySelectorAll('.sg-burger-line');
+    const navLogo = document.getElementById('nav-logo');
+    const navEl = document.querySelector('.sg-scrollspy-desktop');
     if (!logo) return;
     logo.style.transition = 'opacity 0.35s ease';
     lines.forEach((l) => { l.style.transition = 'background 0.35s ease'; });
+    if (navLogo) navLogo.style.transition = 'opacity 0.35s ease';
     let currentMode = null;
     const check = () => {
       const el = document.elementFromPoint(140, 120);
@@ -708,9 +836,21 @@ class Component extends DCLogic {
       currentMode = mode;
       logo.style.opacity = '0';
       lines.forEach((l) => { l.style.background = mode === 'light' ? 'var(--ink-900)' : 'var(--cream-100)'; });
+      if (navEl) {
+        navEl.style.setProperty('--nav-fg', mode === 'light' ? 'var(--ink-900)' : 'var(--cream-100)');
+        navEl.style.setProperty('--nav-fg-muted', mode === 'light' ? 'rgba(3,48,47,0.55)' : 'rgba(244,245,236,0.55)');
+        navEl.style.setProperty('--nav-border-faint', mode === 'light' ? 'rgba(3,48,47,0.15)' : 'rgba(244,245,236,0.15)');
+        navEl.style.setProperty('--nav-border-mid', mode === 'light' ? 'rgba(3,48,47,0.3)' : 'rgba(244,245,236,0.3)');
+        navEl.style.setProperty('--nav-line', mode === 'light' ? 'rgba(3,48,47,0.35)' : 'rgba(244,245,236,0.35)');
+      }
+      if (navLogo) navLogo.style.opacity = '0';
       setTimeout(() => {
         logo.src = mode === 'light' ? 'assets/logo-dark.png' : 'assets/logo-light.png';
         logo.style.opacity = '1';
+        if (navLogo) {
+          navLogo.src = mode === 'light' ? 'assets/logo-dark.png' : 'assets/logo-light.png';
+          navLogo.style.opacity = '1';
+        }
       }, 180);
     };
     window.addEventListener('scroll', check, { passive: true });
@@ -913,8 +1053,42 @@ class Component extends DCLogic {
 
   renderVals() {
     const navOpen = this.state.navOpen;
+    const activeIdx = this.state.activeNavIndex;
+    const measureNavItems = [];
+    this.navSections.forEach((s, i) => {
+      if (i === activeIdx + 1) measureNavItems.push({ id: '__spacer', label: '', measureStyle: 'flex: 1 1 auto; height: 1px;' });
+      const isActive = i === activeIdx;
+      const isPast = i < activeIdx;
+      const borderColor = isActive ? 'var(--yellow-green-500)' : isPast ? 'var(--nav-border-faint, rgba(244,245,236,0.15))' : 'var(--nav-border-mid, rgba(244,245,236,0.3))';
+      measureNavItems.push({
+        id: s.id,
+        label: s.label.toUpperCase(),
+        measureStyle: `flex: 0 0 auto; padding: 6px 14px; border-radius: 999px; border: 1px solid ${borderColor}; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.06em; white-space: nowrap;`,
+      });
+    });
+    const navLine = this.state.navLine;
+    const navLineStyle = `position: absolute; left: ${navLine.left}px; top: ${navLine.top}px; width: ${navLine.width}px; height: 1px; background: var(--nav-line, rgba(244,245,236,0.35)); transform: translateY(-50%); transition: left 0.4s ease, width 0.4s ease, opacity 0.3s ease; opacity: ${navLine.opacity}; pointer-events: none;`;
+    const allNavItems = this.navSections.map((s, i) => {
+      const pos = this.state.navPositions[s.id];
+      const isActive = i === activeIdx;
+      const isPast = i < activeIdx;
+      const target = pos || { left: -220, top: 22 };
+      const borderColor = isActive ? 'var(--yellow-green-500)' : isPast ? 'var(--nav-border-faint, rgba(244,245,236,0.15))' : 'var(--nav-border-mid, rgba(244,245,236,0.3))';
+      const textColor = isPast ? 'var(--nav-fg-muted, rgba(244,245,236,0.55))' : 'var(--nav-fg, var(--cream-100))';
+      return {
+        id: s.id,
+        href: '#' + s.anchor,
+        label: s.label.toUpperCase(),
+        style: `position: absolute; left: ${target.left}px; top: ${target.top}px; transform: translateY(-50%); padding: 6px 14px; border-radius: 999px; border: 1px solid ${borderColor}; background: transparent; color: ${textColor}; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; text-decoration: none; opacity: ${pos ? 1 : 0}; pointer-events: ${pos ? 'auto' : 'none'}; transition: left 0.4s cubic-bezier(0.65,0,0.35,1), top 0.4s ease, opacity 0.3s ease, border-color 0.3s ease, color 0.3s ease; z-index: ${isActive ? 2 : 1};`,
+      };
+    });
+
     return {
       navOpen,
+      navMeasureRef: this.navMeasureRef,
+      measureNavItems,
+      allNavItems,
+      navLineStyle,
       toggleNav: this.toggleNav,
       handleSubmit: this.handleSubmit,
       formSubmitted: this.state.formSubmitted,
@@ -990,17 +1164,6 @@ class Component extends DCLogic {
     };
   }
 }
-</script>
-<script>
-document.addEventListener('click', function(e){
-  var a = e.target.closest('a[href^="#"]');
-  if (!a) return;
-  var id = a.getAttribute('href').slice(1);
-  var el = document.getElementById(id);
-  if (!el) return;
-  e.preventDefault();
-  el.scrollIntoView({ behavior: 'smooth' });
-});
 </script>
 </body>
 </html>
