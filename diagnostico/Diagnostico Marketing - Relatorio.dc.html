@@ -103,7 +103,7 @@
       <div style="border: 1px solid var(--rule-light); border-radius: 17px; padding: 16px"><div style="font-family:var(--font-display);font-size:26px;">{{ data.potential.leads }}</div><div style="font-size:12px;color:var(--text-muted-light);">Leads</div></div>
       <div style="border: 1px solid var(--rule-light); border-radius: 17px; padding: 16px"><div style="font-family:var(--font-display);font-size:26px;">{{ data.potential.oportunidades }}</div><div style="font-size:12px;color:var(--text-muted-light);">Oportunidades</div></div>
       <div style="border: 1px solid var(--rule-light); border-radius: 17px; padding: 16px"><div style="font-family:var(--font-display);font-size:26px;">{{ data.potential.clientes }}</div><div style="font-size:12px;color:var(--text-muted-light);">Clientes</div></div>
-      <div style="border: 1px solid var(--rule-light); border-radius: 17px; padding: 16px"><div style="font-family:var(--font-display);font-size:20px;">{{ receitaLowFmt }}–{{ receitaHighFmt }}</div><div style="font-size:12px;color:var(--text-muted-light);">Receita potencial</div></div>
+      <div style="border: 1px solid var(--rule-light); border-radius: 17px; padding: 16px"><div style="font-family:var(--font-display);font-size:20px;">{{ receitaRangeFmt }}</div><div style="font-size:12px;color:var(--text-muted-light);">Receita potencial</div></div>
     </div>
     <p style="font-size:12px;font-style:italic;color:var(--text-muted-light);margin:0 0 32px;">Estimativas — não são garantia de resultado.</p>
 
@@ -134,7 +134,7 @@
       <h2 style="font-family:var(--font-display);font-weight:500;font-size:40px;line-height:1.05;margin:0 0 20px;">Quer validar este diagnóstico com um <em style="font-style:italic;color:var(--yellow-green-500);">especialista</em>?</h2>
       <p style="font-size:17px;color:var(--text-muted-dark);line-height:var(--lh-normal);max-width:44ch;margin:0 0 40px;">Agende uma conversa com a Seed Grow para transformar este plano em uma operação de marketing estruturada.</p>
       <div style="border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);padding:24px 0;font-size:15px;color:var(--text-muted-dark);">
-        <div style="margin-bottom:8px;"><a href="mailto:contato@seedgrow.com.br" style="color:var(--text-muted-dark);">contato@seedgrow.com.br</a></div>
+        <div style="margin-bottom:8px;"></div>
         <div style="margin-bottom:8px;">Whatsapp: 11 2359-3810</div>
         <div><a href="https://www.seedgrow.com.br" style="color:var(--text-muted-dark);">www.seedgrow.com.br</a></div>
       </div>
@@ -173,6 +173,8 @@ class Component extends DCLogic {
 
   fmtBRL(n){ return (n||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL', maximumFractionDigits:0 }); }
 
+  fmtRange(low, high){ return (low||0)<=0 ? `Até ${this.fmtBRL(high)}` : `${this.fmtBRL(low)} – ${this.fmtBRL(high)}`; }
+
   printPage(){ window.print(); }
 
   renderVals(){
@@ -185,8 +187,7 @@ class Component extends DCLogic {
       dims: (data.dims||[]).map(d => ({ ...d, pct: d.score*10 })),
       investLow: this.fmtBRL(data.investment ? data.investment.low : 0),
       investHigh: this.fmtBRL(data.investment ? data.investment.high : 0),
-      receitaLowFmt: this.fmtBRL(data.potential ? data.potential.receitaLow : 0),
-      receitaHighFmt: this.fmtBRL(data.potential ? data.potential.receitaHigh : 0),
+      receitaRangeFmt: this.fmtRange(data.potential ? data.potential.receitaLow : 0, data.potential ? data.potential.receitaHigh : 0),
       priorities: data.priorities || [],
       contatoNome: data.contatoNome || '—',
       contatoCargo: data.cargo || '—',
