@@ -368,12 +368,12 @@
   <section data-screen-label="CTA Final" style="max-width:720px;margin:0 auto;padding:clamp(72px,10vw,120px) clamp(24px,6vw,48px);text-align:center;">
     <h2 style="font-family:var(--font-display);font-weight:500;font-size:clamp(28px,3.6vw,40px);margin:0 0 16px;">Quer transformar esse diagnóstico em um plano de crescimento?</h2>
     <p style="font-size:17px;color:var(--text-muted-light);line-height:var(--lh-normal);margin:0 0 32px;">Converse com um especialista da Seed Grow e descubra como transformar essas recomendações em uma operação de marketing estruturada.</p>
-    <a href="https://wa.me/message/Y4EHBGBDVM32N1" target="_blank" rel="noopener" class="sg-cta-btn" style="margin:0 auto;">
-      <span class="sg-cta-pill" style="background:var(--yellow-green-500);color:var(--ink-900);">Agendar diagnóstico estratégico</span>
+    <button class="sg-cta-btn" style="margin:0 auto;">
+      <span class="sg-cta-pill" style="background:var(--yellow-green-500);color:var(--ink-900);">Agendar conversa</span>
       <span class="sg-cta-circle" style="background:var(--ink-900);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </span>
-    </a>
+    </button>
   </section>
 
   <section data-screen-label="FAQ" style="max-width:760px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(24px,6vw,48px);border-top:1px solid var(--rule-light);">
@@ -640,13 +640,18 @@ class Component extends DCLogic {
     const midiaIdx = idx(C.MIDIA_FAIXA, a.invest_midia);
     const midiaMid = anuncia ? (midiaIdx>=0 ? C.MIDIA_MID[midiaIdx] : investAtualMid) : investAtualMid;
 
-    const metaReceita = ticketMid * clientesDesejados;
-    const investBase = metaReceita * 0.18;
-    let low = Math.round((investBase*0.75)/500)*500;
-    let high = Math.round((investBase*1.25)/500)*500;
+    const oppRate = 0.35;
+    const closeRateForBudget = anuncia ? 0.22 : 0.15;
+    const leadsNecessarios = clientesDesejados / (oppRate * closeRateForBudget);
+    const orcamentoNecessario = leadsNecessarios * 180;
+    let low = Math.round((orcamentoNecessario*0.8)/500)*500;
+    let high = Math.round((orcamentoNecessario*1.2)/500)*500;
     if(low < 1000) low = 1000;
     if(high <= low) high = low + 2000;
     const mid = (low+high)/2;
+
+    const cacImplicito = orcamentoNecessario / clientesDesejados;
+    const metaInviavel = cacImplicito > (ticketMid * 2);
 
     const gapRatio = mid>0 ? clamp(midiaMid/mid, 0, 1.3) : 0;
     const adsScore = anuncia ? 7 : 2;
@@ -666,9 +671,8 @@ class Component extends DCLogic {
 
     const costPerLead = 180;
     const leads = Math.max(1, Math.round(mid/costPerLead));
-    const oportunidades = Math.max(1, Math.round(leads*0.35));
-    const closeRate = anuncia ? 0.22 : 0.15;
-    const clientes = Math.max(0, Math.round(oportunidades*closeRate));
+    const oportunidades = Math.max(1, Math.round(leads*oppRate));
+    const clientes = Math.max(0, Math.round(oportunidades*closeRateForBudget));
     const [ticketLow, ticketHigh] = C.TICKET_RANGE[ticketIdx>=0?ticketIdx:2];
     const receitaLow = clientes*ticketLow;
     const receitaHigh = clientes*ticketHigh;
@@ -684,9 +688,13 @@ class Component extends DCLogic {
     const sentenceConteudo = contentGapOpportunity
       ? ' Você já investe em mídia paga, mas sua produção de conteúdo ainda é baixa — unir as duas frentes tende a reduzir o custo de aquisição e fortalecer o retorno desse investimento.'
       : '';
-    const diagnosisText = `Você deseja conquistar ${clientesDesejados} novos clientes por mês com um ticket médio de ${a.ticket_medio}. Para esse cenário, estimamos uma faixa de investimento entre ${this.fmtBRL(low)} e ${this.fmtBRL(high)} por mês. ${sentenceInvest} ${sentenceFocus}${sentenceConteudo}`;
+    const sentenceInviavel = metaInviavel
+      ? ` Com o ticket médio informado, atingir ${clientesDesejados} clientes/mês exigiria um custo de aquisição por cliente muito acima do valor da venda — o que compromete o retorno. Vale reavaliar o ticket médio (ex: upsell, recorrência), melhorar a taxa de conversão comercial, ou ajustar a meta de clientes para um patamar saudável dentro desse orçamento.`
+      : '';
+    const diagnosisText = `Você deseja conquistar ${clientesDesejados} novos clientes por mês com um ticket médio de ${a.ticket_medio}. Para esse cenário, estimamos uma faixa de investimento entre ${this.fmtBRL(low)} e ${this.fmtBRL(high)} por mês. ${sentenceInvest} ${sentenceFocus}${sentenceConteudo}${sentenceInviavel}`;
 
     const candidates = [];
+    if(metaInviavel) candidates.push({ title:'Revisar meta ou ticket médio', desc:'O custo por cliente necessário para bater a meta atual está desproporcional ao ticket médio — vale ajustar um dos dois antes de escalar o investimento.' });
     if(!anuncia) candidates.push({ title:'Estruturar aquisição paga', desc:'Iniciar uma operação de mídia paga estruturada para gerar previsibilidade de leads.' });
     if(investAtualIdx<=1) candidates.push({ title:'Aumentar consistência de investimento', desc:'Elevar o investimento mensal para um patamar compatível com a meta de crescimento.' });
     if(contentGapOpportunity) candidates.push({ title:'Usar conteúdo para potencializar a mídia paga', desc:'Combinar produção de conteúdo com suas campanhas atuais reduz o custo de aquisição e fortalece a marca.' });
