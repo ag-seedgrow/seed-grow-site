@@ -1015,6 +1015,19 @@ class Component extends DCLogic {
   toggleNav = () => this.setState(s => ({ navOpen: !s.navOpen }));
   toggleService = (n) => this.setState(s => ({ openService: s.openService === n ? null : n }));
 
+  getUtmParams() {
+    try {
+      const p = new URLSearchParams(window.location.search);
+      return {
+        utm_source: p.get('utm_source') || '',
+        utm_medium: p.get('utm_medium') || '',
+        utm_campaign: p.get('utm_campaign') || '',
+        utm_content: p.get('utm_content') || '',
+        utm_term: p.get('utm_term') || '',
+      };
+    } catch (e) { return {}; }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.formSubmitting) return;
@@ -1038,6 +1051,7 @@ class Component extends DCLogic {
       loadedAt: this.formLoadedAt,
       origem: 'site',
       landing_page: typeof window !== 'undefined' ? window.location.href : '',
+      ...this.getUtmParams(),
     };
 
     fetch(`${this.SUPABASE_URL}/functions/v1/submit-lead`, {
