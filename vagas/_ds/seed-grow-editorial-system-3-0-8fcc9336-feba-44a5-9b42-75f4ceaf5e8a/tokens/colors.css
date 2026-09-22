@@ -1,0 +1,27 @@
+:root{
+/* base palette — sampled from Seed Grow wordmark */
+--ink-900:#03302f;
+--ink-800:#0a3b36;
+--ink-700:#123f3b;
+--cream-100:#f4f5ec;
+--cream-200:#e6eadd;
+--cream-300:#d9decb;
+/* accent editorial highlights (per brand doc: "Yellow Green" and "Cayenne") */
+--yellow-green-500:#c3d82e;
+--yellow-green-600:#a3b820;
+--cayenne-500:#e55812;
+--cayenne-600:#efe7da;
+/* semantic aliases */
+--bg-editorial-light:var(--cream-100);
+--bg-editorial-dark:var(--ink-900);
+--surface-card:var(--cream-200);
+--surface-card-dark:var(--ink-800);
+--text-on-light:var(--ink-900);
+--text-on-dark:var(--cream-100);
+--text-muted-light:#4d5c53;
+--text-muted-dark:#a9b8ac;
+--accent-primary:var(--yellow-green-500);
+--accent-secondary:var(--cayenne-500);
+--rule-light:rgba(3,48,47,0.15);
+--rule-dark:rgba(244,245,236,0.2);
+}

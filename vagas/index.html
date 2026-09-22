@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#03302f"></rect><text x="26" y="118" font-family="Georgia, serif" font-size="42" fill="#c3d82e" font-style="italic">SG</text></svg></template>
+<helmet>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T33NQ883');</script>
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/styles.css">
+  <script src="_ds/seed-grow-editorial-system-3-0-8fcc9336-feba-44a5-9b42-75f4ceaf5e8a/_ds_bundle.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scrollbar-color: rgba(195,216,46,0.5) transparent; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(195,216,46,0.5); border-radius: 8px; border: 3px solid transparent; background-clip: content-box; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(195,216,46,0.7); background-clip: content-box; }
+    body { margin: 0; background: var(--cream-100); scroll-behavior: smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="4" fill="%23c3d82e"/></svg>') 14 14, auto; }
+    a, button, a *, button * { cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="6" fill="none" stroke="%23c3d82e" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="%23c3d82e"/></svg>') 14 14, pointer; }
+    p, h1, h2, h3, span, label, textarea, input, select { cursor: text; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--yellow-green-500); }
+    ::selection { background: var(--yellow-green-500); color: var(--ink-900); }
+    .sg-container { max-width: 1280px; margin: 0 auto; padding: 0 96px; }
+    .sg-vagas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .sg-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .sg-vaga-card { border: 1px solid var(--rule-light); border-radius: 16px; padding: 32px; background: transparent; text-align: left; font-family: var(--font-body); transition: border-color 0.3s ease, background 0.3s ease; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="6" fill="none" stroke="%23c3d82e" stroke-width="2"/><circle cx="14" cy="14" r="2" fill="%23c3d82e"/></svg>') 14 14, pointer; }
+    .sg-vaga-card * { cursor: inherit; }
+    .sg-select-wrap { position: relative; display: flex; flex-direction: column; }
+    .sg-select-wrap::after { content: ''; position: absolute; right: 16px; bottom: 21px; width: 8px; height: 8px; border-right: 1.5px solid var(--ink-900); border-bottom: 1.5px solid var(--ink-900); transform: rotate(45deg); pointer-events: none; }
+    .sg-vaga-card:hover { border-color: var(--yellow-green-500); }
+    .sg-cta-btn { position: relative; display: inline-flex; align-items: center; height: 56px; text-decoration: none; background: transparent; border: none; padding: 0; -webkit-appearance: none; appearance: none; }
+    .sg-cta-pill { position: relative; z-index: 1; display: flex; align-items: center; height: 100%; padding: 0 30px; border-radius: 999px; white-space: nowrap; font-weight: 600; font-size: 15px; transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
+    .sg-cta-circle { position: absolute; top: 0; height: 56px; width: 56px; left: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: left 0.45s cubic-bezier(0.65,0,0.35,1); z-index: 2; }
+    .sg-cta-circle svg { transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); }
+    .sg-cta-btn:hover .sg-cta-pill { transform: translateX(56px); }
+    .sg-cta-btn:hover .sg-cta-circle { left: 0; }
+    .sg-cta-btn:hover .sg-cta-circle svg { transform: rotate(-45deg); }
+    .sg-cta-hero { height: 46px; }
+    .sg-cta-hero .sg-cta-pill { padding: 0 26px; font-size: 14px; }
+    .sg-cta-hero .sg-cta-circle { width: 46px; height: 46px; }
+    .sg-cta-hero:hover .sg-cta-pill { transform: translateX(46px); }
+    .sg-cta-hero:hover .sg-cta-circle { left: 0; }
+    @media (max-width: 980px) {
+      .sg-container { padding: 0 32px; }
+      .sg-vagas-grid { grid-template-columns: 1fr; }
+      .sg-form-grid { grid-template-columns: 1fr; }
+      .sg-footer-row { grid-template-columns: 1fr !important; justify-items: center; text-align: center; gap: 28px !important; }
+      .sg-footer-row img { justify-self: center !important; }
+    }
+    @media (max-width: 640px) {
+      .sg-cta-btn { height: auto; }
+      .sg-cta-pill { padding: 16px 20px !important; transform: none !important; }
+      .sg-cta-circle { position: static !important; left: auto !important; width: 32px; height: 32px; margin-left: -8px; }
+      .sg-cta-circle svg { width: 14px; height: 14px; }
+      .sg-cta-btn:hover .sg-cta-pill { transform: none !important; }
+      .sg-cta-btn:hover .sg-cta-circle { left: auto !important; }
+      .sg-cta-btn:hover .sg-cta-circle svg { transform: none !important; }
+    }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--cream-100); color: var(--ink-900); overflow-x: hidden;">
+
+  <section data-screen-label="Hero" style="background: var(--ink-900); padding: 40px 0 140px;">
+    <div class="sg-container" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 120px;">
+      <a href="../index.html" style="display: flex; align-items: center;">
+        <img src="assets/logo-light.png" alt="Seed Grow" style="height: 18px; width: auto; display: block;">
+      </a>
+      <a href="../index.html" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-dark);">Voltar ao site</a>
+    </div>
+    <div class="sg-container" style="max-width: 1000px;">
+      <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--yellow-green-500); margin-bottom: 28px;">Trabalhe com a gente</div>
+      <h1 style="font-family: var(--font-display); font-weight: 500; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.05; letter-spacing: var(--ls-tight); color: var(--cream-100); margin: 0 0 48px; text-wrap: pretty;">Marketing feito por quem entende de <em style="font-style: italic; color: var(--yellow-green-500);">negócio</em>.</h1>
+      <a href="#candidatura" class="sg-cta-btn sg-cta-hero"><span class="sg-cta-pill" style="background: var(--cream-100); color: var(--ink-900);">Quero me candidatar</span><span class="sg-cta-circle" style="background: var(--yellow-green-500);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+    </div>
+  </section>
+
+  <section data-screen-label="Vagas abertas" id="vagas" style="background: var(--cream-100); padding: 140px 0; scroll-margin-top: 15vh;">
+    <div class="sg-container">
+      <div style="margin-bottom: 64px;">
+        <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 24px;">{{ vagasCountLabel }}</div>
+        <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.05; letter-spacing: var(--ls-tight); margin: 0; max-width: 700px;">Posições abertas</h2>
+      </div>
+      <div class="sg-vagas-grid">
+        <sc-for list="{{ vagas }}" as="vaga" hint-placeholder-count="4">
+          <div class="sg-vaga-card" onClick="{{ vaga.toggle }}" style="{{ vaga.cardStyle }}">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
+              <div>
+                <div style="font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1.15; margin-bottom: 10px;">{{ vaga.titulo }}</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                  <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900); border: 1px solid var(--rule-light); border-radius: 999px; padding: 5px 12px;">{{ vaga.modelo }}</span>
+                  <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900); border: 1px solid var(--rule-light); border-radius: 999px; padding: 5px 12px;">{{ vaga.senioridade }}</span>
+                  <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900); border: 1px solid var(--rule-light); border-radius: 999px; padding: 5px 12px;">{{ vaga.area }}</span>
+                </div>
+              </div>
+              <span style="{{ vaga.iconStyle }}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+            </div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); margin-top: 20px;">{{ vaga.resumo }}</div>
+            <sc-if value="{{ vaga.open }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--rule-light);">
+                <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 16px;">O que você vai fazer</div>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+                  <sc-for list="{{ vaga.atividades }}" as="item" hint-placeholder-count="3">
+                    <div style="display: flex; gap: 12px; align-items: baseline;">
+                      <span style="flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow-green-500);"></span>
+                      <span style="font-size: 16px; line-height: 1.55; color: var(--ink-900);">{{ item.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 16px;">O que esperamos</div>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+                  <sc-for list="{{ vaga.requisitos }}" as="item" hint-placeholder-count="3">
+                    <div style="display: flex; gap: 12px; align-items: baseline;">
+                      <span style="flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--ink-900);"></span>
+                      <span style="font-size: 16px; line-height: 1.55; color: var(--ink-900);">{{ item.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <a href="#candidatura" onClick="{{ vaga.apply }}" class="sg-cta-btn sg-cta-hero"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900);">Candidatar-se a esta vaga</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top: 48px; font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 560px;">Nenhuma vaga combina com o seu perfil? Envie sua candidatura para o banco de talentos, avaliamos todos os perfis quando uma nova posição abre.</div>
+    </div>
+  </section>
+
+  <section data-screen-label="Candidatura" id="candidatura" style="background: var(--ink-900); padding: 140px 0; scroll-margin-top: 10vh;">
+    <div class="sg-container">
+      <div style="margin-bottom: 56px; max-width: 620px;">
+        <div style="font-size: 13px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--yellow-green-500); margin-bottom: 24px;">Candidatura</div>
+        <h2 style="font-family: var(--font-display); font-weight: 500; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: var(--cream-100); margin: 0 0 16px;">Conte quem você <em style="font-style: italic; color: var(--yellow-green-500);">é</em>.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted-dark); margin: 0;">Currículo e portfólio entram por link. Se ainda não tiver um link público, suba o arquivo no Google Drive ou Dropbox e cole o endereço de compartilhamento.</p>
+      </div>
+      <div style="background: var(--cream-100); border-radius: 16px; padding: 48px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); max-width: 880px;">
+        <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ handleSubmit }}" style="display: flex; flex-direction: column; gap: 20px;">
+            <input type="text" name="website" tabIndex="-1" autoComplete="off" ref="{{ honeypotRef }}" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0;">
+            <div class="sg-select-wrap" style="gap: 8px;">
+              <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Vaga de interesse *</label>
+              <select ref="{{ vagaRef }}" required="{{ true }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none; -webkit-appearance: none; appearance: none;">
+                <option value="Design Júnior">Design Júnior - Remoto</option>
+                <option value="Design Pleno">Design Pleno - Remoto</option>
+                <option value="Social Media Pleno">Social Media Pleno - Remoto</option>
+                <option value="Gerente de Projetos Pleno">Gerente de Projetos Pleno - Remoto</option>
+                <option value="Banco de talentos">Banco de talentos - nenhuma vaga específica</option>
+              </select>
+            </div>
+            <div class="sg-form-grid">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Nome *</label>
+                <input type="text" placeholder="Seu nome completo" required="{{ true }}" ref="{{ nomeRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">E-mail *</label>
+                <input type="email" placeholder="nome@email.com" required="{{ true }}" ref="{{ emailRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Telefone / WhatsApp *</label>
+                <input type="tel" placeholder="(11) 99999-9999" required="{{ true }}" ref="{{ telefoneRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Cidade</label>
+                <input type="text" placeholder="Cidade, estado" ref="{{ cidadeRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Currículo (link) *</label>
+                <input type="url" placeholder="Link do Drive, Dropbox ou PDF público" required="{{ true }}" ref="{{ curriculoRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Portfólio (link)</label>
+                <input type="url" placeholder="Behance, site, Drive..." ref="{{ portfolioRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">LinkedIn</label>
+                <input type="url" placeholder="linkedin.com/in/..." ref="{{ linkedinRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Pretensão salarial</label>
+                <input type="text" placeholder="R$ 0.000" ref="{{ pretensaoRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none;">
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-900);">Por que a Seed Grow?</label>
+              <textarea rows="4" placeholder="Conte o que você faz hoje e o que busca no próximo passo." ref="{{ mensagemRef }}" style="border: 1px solid var(--rule-light); border-radius: 8px; background: var(--cream-100); padding: 13px 14px; font-family: var(--font-body); font-size: 15px; color: var(--ink-900); outline: none; resize: vertical;"></textarea>
+            </div>
+            <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size: 13px; color: var(--cayenne-500); background: rgba(229,88,18,0.08); border-radius: 8px; padding: 12px 14px;">{{ formError }}</div>
+            </sc-if>
+            <button type="submit" disabled="{{ formSubmitting }}" class="sg-cta-btn" style="margin-top: 8px; align-self: flex-start; opacity: {{ submitOpacity }};"><span class="sg-cta-pill" style="background: var(--yellow-green-500); color: var(--ink-900); font-size: 14px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;">{{ submitLabel }}</span><span class="sg-cta-circle" style="background: var(--ink-900);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cream-100)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></button>
+            <div style="font-size: 12px; color: var(--text-muted-light); line-height: 1.5;">Ao enviar, você concorda que seus dados sejam usados no nosso processo seletivo.</div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 24px 0;">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 28px; color: var(--ink-900); margin-bottom: 12px;">Candidatura recebida.</div>
+            <div style="font-size: 16px; line-height: 1.6; color: var(--text-muted-light); max-width: 420px;">Avaliamos todos os perfis e entramos em contato com quem seguir no processo.</div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--ink-900); padding: 64px 0;">
+    <div class="sg-container sg-footer-row" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px;">
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <a href="https://www.instagram.com/ag.seedgrow/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: var(--text-muted-dark); display: flex;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ag-seedgrow/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: var(--text-muted-dark); display: flex;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="7.5" y1="10" x2="7.5" y2="17"></line><circle cx="7.5" cy="6.8" r="1" fill="currentColor" stroke="none"></circle><path d="M11.5 17v-4.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V17"></path></svg>
+        </a>
+      </div>
+      <div style="font-size: 13px; color: var(--text-muted-dark); text-align: center; white-space: nowrap;">© 2026 Seed Grow</div>
+      <img src="assets/logo-light.png" alt="Seed Grow" style="height: 18px; width: auto; justify-self: end;">
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openVaga: null, formSubmitted: false, formSubmitting: false, formError: null };
+
+  SUPABASE_URL = 'https://mfapudrzukmfjcsmhpmn.supabase.co';
+  SUPABASE_KEY = 'sb_publishable_mMfOhG7_atrsY2jyZJbtjQ_LoO5TLBO';
+
+  nomeRef = React.createRef();
+  emailRef = React.createRef();
+  telefoneRef = React.createRef();
+  cidadeRef = React.createRef();
+  vagaRef = React.createRef();
+  linkedinRef = React.createRef();
+  portfolioRef = React.createRef();
+  curriculoRef = React.createRef();
+  pretensaoRef = React.createRef();
+  mensagemRef = React.createRef();
+  honeypotRef = React.createRef();
+
+  formLoadedAt = Date.now();
+
+  vagasData = [
+    {
+      id: 'design-jr',
+      titulo: 'Design Júnior',
+      modelo: 'Remoto',
+      senioridade: 'Júnior',
+      area: 'Criação',
+      value: 'Design Júnior',
+      resumo: 'Peças para social, campanhas e materiais de marca, com acompanhamento próximo do time de criação.',
+      atividades: [
+        'Produzir peças para redes sociais, anúncios e materiais de apoio a partir das diretrizes de cada marca.',
+        'Adaptar campanhas para diferentes formatos e canais.',
+        'Organizar arquivos, versões e entregas dentro dos prazos do cronograma.',
+      ],
+      requisitos: [
+        'Domínio de Figma e do pacote Adobe (Photoshop, Illustrator, After Effects é diferencial).',
+        'Portfólio com trabalhos de social media, campanha ou identidade visual.',
+        'Atenção a detalhe tipográfico e disposição para receber direção.',
+      ],
+    },
+    {
+      id: 'design-pl',
+      titulo: 'Design Pleno',
+      modelo: 'Remoto',
+      senioridade: 'Pleno',
+      area: 'Criação',
+      value: 'Design Pleno',
+      resumo: 'Condução criativa de campanhas e identidades, do conceito à entrega, para clientes de diferentes setores.',
+      atividades: [
+        'Desenvolver conceitos visuais de campanha a partir do briefing de estratégia.',
+        'Conduzir identidades visuais e sistemas de peças para múltiplos canais.',
+        'Apresentar e defender decisões criativas para o time e para o cliente.',
+        'Revisar entregas de designers júnior e manter o padrão de qualidade.',
+      ],
+      requisitos: [
+        'Três anos ou mais de experiência em agência ou time interno de marketing.',
+        'Portfólio que mostre raciocínio estratégico, não só execução.',
+        'Domínio de Figma e Adobe; motion e edição de vídeo são diferenciais.',
+        'Autonomia para organizar as próprias entregas em um time remoto.',
+      ],
+    },
+    {
+      id: 'social-pl',
+      titulo: 'Social Media Pleno',
+      modelo: 'Remoto',
+      senioridade: 'Pleno',
+      area: 'Conteúdo',
+      value: 'Social Media Pleno',
+      resumo: 'Planejamento, produção e análise de conteúdo para as marcas que atendemos.',
+      atividades: [
+        'Construir planejamento de conteúdo mensal alinhado aos objetivos de cada cliente.',
+        'Escrever copy para posts, roteiros e anúncios.',
+        'Acompanhar métricas, interpretar resultados e propor ajustes de rota.',
+        'Trabalhar junto de criação e mídia na execução das campanhas.',
+      ],
+      requisitos: [
+        'Três anos ou mais de experiência com gestão de redes sociais de marcas.',
+        'Boa escrita e repertório de referências atualizadas.',
+        'Leitura de métricas em Meta Business, Google Analytics e ferramentas de social listening.',
+        'Experiência em atendimento direto ao cliente.',
+      ],
+    },
+    {
+      id: 'gp-pl',
+      titulo: 'Gerente de Projetos Pleno',
+      modelo: 'Remoto',
+      senioridade: 'Pleno',
+      area: 'Operação',
+      value: 'Gerente de Projetos Pleno',
+      resumo: 'Condução de cronogramas, escopos e entregas entre clientes e time interno.',
+      atividades: [
+        'Planejar cronogramas, escopos e capacidade do time por projeto.',
+        'Acompanhar o andamento das entregas e antecipar riscos de prazo.',
+        'Ser o ponto de contato entre cliente e time interno no dia a dia.',
+        'Manter a documentação de projetos e os rituais de acompanhamento.',
+      ],
+      requisitos: [
+        'Três anos ou mais de experiência em gestão de projetos de marketing ou agência.',
+        'Domínio de ferramentas de gestão como ClickUp, Asana, Notion ou Monday.',
+        'Clareza na comunicação escrita e falada com clientes.',
+        'Organização para conduzir vários projetos em paralelo.',
+      ],
+    },
+  ];
+
+  toggleVaga = (id, e) => {
+    if (e && e.target && e.target.closest('a')) return;
+    this.setState((s) => ({ openVaga: s.openVaga === id ? null : id }));
+  };
+
+  applyTo = (value) => {
+    if (this.vagaRef.current) this.vagaRef.current.value = value;
+  };
+
+  componentDidMount() {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      const marginTop = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - marginTop;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.formSubmitting) return;
+
+    const nome = this.nomeRef.current?.value.trim() || '';
+    const email = this.emailRef.current?.value.trim() || '';
+    const vaga = this.vagaRef.current?.value || '';
+    const curriculo = this.curriculoRef.current?.value.trim() || '';
+    if (!nome || !email || !curriculo) {
+      this.setState({ formError: 'Preencha nome, e-mail e o link do currículo.' });
+      return;
+    }
+
+    this.setState({ formSubmitting: true, formError: null });
+
+    const detalhes = [
+      `Vaga: ${vaga}`,
+      `Cidade: ${this.cidadeRef.current?.value.trim() || '—'}`,
+      `Currículo: ${curriculo}`,
+      `Portfólio: ${this.portfolioRef.current?.value.trim() || '—'}`,
+      `LinkedIn: ${this.linkedinRef.current?.value.trim() || '—'}`,
+      `Pretensão: ${this.pretensaoRef.current?.value.trim() || '—'}`,
+      '',
+      this.mensagemRef.current?.value.trim() || '',
+    ].join('\n');
+
+    const payload = {
+      nome,
+      email,
+      telefone: this.telefoneRef.current?.value.trim() || '',
+      empresa: vaga,
+      mensagem: detalhes,
+      website: this.honeypotRef.current?.value || '',
+      loadedAt: this.formLoadedAt,
+      origem: 'vagas',
+      landing_page: typeof window !== 'undefined' ? window.location.href : '',
+    };
+
+    fetch(`${this.SUPABASE_URL}/functions/v1/submit-lead`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: this.SUPABASE_KEY,
+        Authorization: `Bearer ${this.SUPABASE_KEY}`,
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(15000),
+    })
+      .then((res) => res.json().catch(() => ({ success: false })))
+      .then((data) => {
+        if (data.success) {
+          this.setState({ formSubmitted: true, formSubmitting: false });
+        } else {
+          this.setState({ formSubmitting: false, formError: data.error || 'Não foi possível enviar. Tente novamente.' });
+        }
+      })
+      .catch((err) => {
+        const msg = err.name === 'TimeoutError' ? 'O envio demorou demais. Tente novamente.' : 'Falha de conexão. Verifique sua internet e tente novamente.';
+        this.setState({ formSubmitting: false, formError: msg });
+      });
+  };
+
+  renderVals() {
+    const open = this.state.openVaga;
+    const vagas = this.vagasData.map((v) => {
+      const isOpen = open === v.id;
+      return {
+        ...v,
+        open: isOpen,
+        atividades: v.atividades.map((text) => ({ text })),
+        requisitos: v.requisitos.map((text) => ({ text })),
+        toggle: (e) => this.toggleVaga(v.id, e),
+        apply: () => this.applyTo(v.value),
+        cardStyle: `border: 1px solid ${isOpen ? 'var(--yellow-green-500)' : 'var(--rule-light)'}; border-radius: 16px; padding: 32px; background: transparent; text-align: left; font-family: var(--font-body); grid-column: ${isOpen ? '1 / -1' : 'auto'};`,
+        iconStyle: `flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid ${isOpen ? 'var(--yellow-green-500)' : 'var(--rule-light)'}; color: var(--ink-900); transition: transform 0.35s ease; transform: rotate(${isOpen ? '45deg' : '0deg'});`,
+      };
+    });
+
+    return {
+      vagas,
+      vagasCountLabel: `${this.vagasData.length} vagas abertas`,
+      handleSubmit: this.handleSubmit,
+      honeypotRef: this.honeypotRef,
+      nomeRef: this.nomeRef,
+      emailRef: this.emailRef,
+      telefoneRef: this.telefoneRef,
+      cidadeRef: this.cidadeRef,
+      vagaRef: this.vagaRef,
+      linkedinRef: this.linkedinRef,
+      portfolioRef: this.portfolioRef,
+      curriculoRef: this.curriculoRef,
+      pretensaoRef: this.pretensaoRef,
+      mensagemRef: this.mensagemRef,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      formSubmitting: this.state.formSubmitting,
+      formError: this.state.formError,
+      submitLabel: this.state.formSubmitting ? 'Enviando...' : 'Enviar candidatura',
+      submitOpacity: this.state.formSubmitting ? 0.6 : 1,
+    };
+  }
+}
+</script>
+</body>
+</html>
